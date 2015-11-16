@@ -20,7 +20,8 @@ public class NewRequestTest {
     public LogInSteps logInSteps;
 
     @Test
-    public void new_simple_request() {
+    public void new_simple_request() 
+    {
     	logInSteps.login("bernadett.baja1", "testing");
     }
 
