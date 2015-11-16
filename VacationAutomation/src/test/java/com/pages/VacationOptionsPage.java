@@ -11,31 +11,61 @@ public class VacationOptionsPage extends PageObject
 	@FindBy(css = "a[href*='menuItem=new-request']")
     private WebElementFacade newVacationRequest;
 	
+	public void create_page_newVacationRequest() 
+    {
+    	newVacationRequest.click();
+    }
+	
 	@FindBy(css = "a[href*='menuItem=my-requests']")
 	private WebElementFacade newMyRequests;
 	
-	@FindBy(css = "  ")
+	public void create_page_newMyRequests() 
+    {
+		newMyRequests.click();
+    }
+	
+	@FindBy(css = "a[href*='menuItem=my-free-days']")
     private WebElementFacade newMyFreeDays;
 	
-	@FindBy (css = "#aui_3_4_0_1_340 > div.aui-column.aui-w25.aui-column-first > div > div:nth-child(1) > ul > li:nth-child(5) > a")
+	public void create_page_newMyFreeDays() 
+    {
+		newMyFreeDays.click();
+    }
+	
+	@FindBy (css = "a[href*='menuItem=free-days-history']")
 	private WebElementFacade newFreeDaysHistory;
 	
-	@FindBy (css = "#aui_3_4_0_1_340 > div.aui-column.aui-w25.aui-column-first > div > div:nth-child(2) > ul > li.inactive-menu > a")
+	public void create_page_newFreeDaysHistory() 
+    {
+		newFreeDaysHistory.click();
+    }
+	
+	@FindBy (css = "a[href*='menuItem=vacation-tracker']")
 	private WebElementFacade trackVacationTracker;
 	
-	@FindBy (css = "#aui_3_4_0_1_340 > div.aui-column.aui-w25.aui-column-first > div > div:nth-child(3) > ul > li:nth-child(3) > a")
+	public void create_page_trackVacationTracker() 
+    {
+		trackVacationTracker.click();
+    }
+	
+	@FindBy (css = "a[href*='menuItem=inbox']")
 	private WebElementFacade inboxVacManagement;
 	
-	@FindBy (css = "#p_p_id_evovacation_WAR_EvoVacationportlet_ > div > div > div > div > div > div.aui-column.aui-w25.aui-column-first > div > div:nth-child(3) > ul > li:nth-child(4) > a")
+	public void create_page_inboxVacManagement() 
+    {
+		inboxVacManagement.click();
+    }
+	
+	@FindBy (css = "a[href*='menuItem=view-vacations']")
 	private WebElementFacade viewVacations;
 	
+	public void create_page_viewVacations() 
+    {
+		viewVacations.click();
+    }
 	
 	//    public void enter_keywords(String keyword) {
 //        searchTerms.type(keyword);
 //    }
-
-    public void create_page_newVacationRequest() 
-    {
-    	newVacationRequest.click();
-    }
+  
 }
