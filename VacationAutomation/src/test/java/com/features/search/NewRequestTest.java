@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import com.pages.NewVacationRequestPage;
 import com.steps.serenity.LogInSteps;
 import com.steps.serenity.NewVacationRequestSteps;
 
@@ -30,5 +31,16 @@ public class NewRequestTest {
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(17, "Nov", 2015);
     	newVacationRequestSteps.selectEndDate(18, "Nov", 2015);
+//    	newVacationRequestSteps.selectHoliday();
+//    	newVacationRequestSteps.selectVacationWithoutPayment();
+//    	newVacationRequestSteps.selectSickleave();
+//    	newVacationRequestSteps.selectSpecialvacation();
+    	newVacationRequestSteps.selectMaternityleave();
+    	newVacationRequestSteps.selectMaternityLeaveOption();
+    	newVacationRequestSteps.clickAddComment();
+    	newVacationRequestSteps.typeComment("Comentariuasdasd asd asd");
+    	newVacationRequestSteps.clickSaveButton();
+ 
+    	
     }
 } 
