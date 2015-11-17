@@ -14,7 +14,7 @@ public class InboxPage extends PageObject {
     @FindBy(css="input[id='_evovacation_WAR_EvoVacationportlet_multipleApproveButton']")
     private WebElementFacade approve;
     
-    @FindBy(css="input[id='login-username']")
+    @FindBy(css="input[id='_evovacation_WAR_EvoVacationportlet_multipleRejectButton']")
     private WebElementFacade reject;
     
     /*public void enter_username(String user) {
