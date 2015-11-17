@@ -4,9 +4,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.pages.VacationOptionsPage;
-import com.pages.VacationTracker;
 import com.steps.serenity.LogInSteps;
+import com.steps.serenity.NewVacationRequestSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -20,16 +19,16 @@ public class NewRequestTest {
 
     @Steps
     public LogInSteps logInSteps;
-    public VacationOptionsPage obj;
-    public VacationTracker vacTrack;
+   
+    @Steps
+    public NewVacationRequestSteps newVacationRequestSteps;
 
     @Test
     public void new_simple_request() 
     {
     	logInSteps.login("bernadett.baja1", "testing");
-    	obj.create_page_trackVacationTracker();
-    	vacTrack.verifica();
-    	
+    	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
+    	newVacationRequestSteps.selectStartDate(17, "Nov", 2015);
+    	newVacationRequestSteps.selectEndDate(18, "Nov", 2015);
     }
-
 } 
