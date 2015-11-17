@@ -1,5 +1,7 @@
 package com.pages;
 
+import org.junit.Assert;
+
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
@@ -17,10 +19,10 @@ public class InboxPage extends PageObject {
     @FindBy(css="input[id='_evovacation_WAR_EvoVacationportlet_multipleRejectButton']")
     private WebElementFacade reject;
     
-    /*public void enter_username(String user) {
-    	element(username).waitUntilVisible();
-    	username.type(user);
-    }*/
+    @FindBy(name="portlet-msg-success")
+    private WebElementFacade message;
+
+    
     
     public void click_checklist() {
     	checklist.click();
@@ -31,4 +33,7 @@ public class InboxPage extends PageObject {
     public void reject() {
     	reject.click();
     }
+    public void verifyMessage() {
+        Assert.assertTrue("Wrong !!!!", message.getText().contentEquals("Your request completed successfully"));
+  }
 }

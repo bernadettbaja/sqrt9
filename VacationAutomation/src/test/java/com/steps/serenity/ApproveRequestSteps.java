@@ -12,19 +12,34 @@ import static org.hamcrest.Matchers.hasItem;
 
 import org.junit.Assert;
 
-public class LogInSteps extends ScenarioSteps {
-	VacationOptionsPage obj;
-
-	LogInPage logInPage;
+public class ApproveRequestSteps extends ScenarioSteps 
+{
+ VacationOptionsPage obj;
 
 	InboxPage InboxPage;
 
 	@Step
-	public void login(String user, String pass) {
-		logInPage.open();
-		logInPage.enter_username(user);
-		logInPage.enter_password(pass);
-		logInPage.click_login();
+	public void GoToInbox() {
+		obj.create_page_inboxVacManagement();
+	}
+
+	@Step
+	public void checklist() {
+		InboxPage.click_checklist();
+	}
+
+	@Step
+	public void approve() {
+		InboxPage.approve();
+	}
+
+	@Step
+	public void reject() {
+		InboxPage.reject();
+	}
+	@Step
+	public void verifymessage(){
+		InboxPage.verifyMessage();
 	}
 
 }

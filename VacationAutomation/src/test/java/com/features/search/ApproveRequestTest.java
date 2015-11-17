@@ -10,30 +10,33 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-
+import com.steps.serenity.ApproveRequestSteps;
 import com.steps.serenity.EndUserSteps;
 //import com.steps.serenity.EndUserSteps;
 import com.steps.serenity.LogInSteps;
 
 @RunWith(SerenityRunner.class)
-public class approve_request {
+public class ApproveRequestTest 
+{
 
     @Managed(uniqueSession = true)
     public WebDriver webdriver;
 
     @Steps
     public LogInSteps logInSteps;
- 
-
+    
+    @Steps
+    public ApproveRequestSteps approveRequestSteps;
   
     @Test
-    public void approve_request() {
+    public void approveRequestTest() {
     	logInSteps.login("alexandra.vlaic1", "Viking");
-        logInSteps.GoToInbox();
-        logInSteps.checklist();
-        logInSteps.approve();
-        logInSteps.reject();
+    	approveRequestSteps.GoToInbox();
+    	approveRequestSteps.checklist();
+    	approveRequestSteps.approve();
+    	approveRequestSteps.verifymessage();
     }
      
+  
     
 }     

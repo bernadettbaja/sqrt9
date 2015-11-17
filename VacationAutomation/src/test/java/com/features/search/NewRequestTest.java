@@ -26,9 +26,9 @@ public class NewRequestTest {
     @Test
     public void new_simple_request() 
     {
-    	logInSteps.login("bernadett.baja1", "testing");
+    	logInSteps.login("tudor.butiri1", "evoportal");
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(17, "Nov", 2015);
-    	newVacationRequestSteps.selectEndDate(18, "Nov", 2015);
+    	newVacationRequestSteps.selectStartDate(24, "Jan", 2016);
+    	newVacationRequestSteps.selectEndDate(25, "Jan", 2016);
     }
 } 
