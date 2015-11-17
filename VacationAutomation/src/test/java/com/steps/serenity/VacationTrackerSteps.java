@@ -28,10 +28,15 @@ public class VacationTrackerSteps extends ScenarioSteps
 	}
 	
 	@Step
-	public void insert_startDate(int day, String month, int year) throws InterruptedException	
+	public void insert_StartDate (int day, String month, int year) throws InterruptedException	
 	{
-		vacationTracker.apasa_pentru_calendar();
-		vacationTracker.setDate(year, month, year);
+		vacationTracker.setStartDate(day, month, year);
+	}
+	
+	@Step
+	public void insert_EndDate (int day, String month, int year)
+	{
+		vacationTracker.setEndDate(day, month, year);
 	}
 	
 	@Step

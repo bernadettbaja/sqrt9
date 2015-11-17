@@ -20,11 +20,6 @@ public class VacationTracker extends PageObject {
 	@FindBy(name = "trackerStartDate")
 	private WebElementFacade trackerStarDate;
 
-	public void apasa_pentru_calendar() 
-	{
-		trackerStarDate.click();
-	}
-
 	@FindBy(css = "[style*='display: block'] .dp_caption")
 	private WebElementFacade title;
 
@@ -36,10 +31,12 @@ public class VacationTracker extends PageObject {
 
 	@FindBy(css = "[style*='display: block'] .dp_daypicker td:not([class*='disabled'])")
 	private List<WebElementFacade> dayList;
-
-	public void setDate(int day, String month, int year) throws InterruptedException 
+	
+	public void setStartDate(int day, String month, int year) throws InterruptedException 
 	{
-		// click twice on title to open year view
+		trackerStarDate.click(); // It simply clicks on the StartDate calendar - for the calendar to open
+		
+		// it clicks two times on title
 		title.click();
 		title.click();
 
@@ -67,5 +64,12 @@ public class VacationTracker extends PageObject {
 				dayList.wait(5000);
 				break;
 			}
+	}
+	
+	public void setEndDate(int day, String month, int year)
+	{
+		trackerStarDate.click(); // It simply clicks on the StartDate calendar - for the calendar to open
+		
+		
 	}
 }

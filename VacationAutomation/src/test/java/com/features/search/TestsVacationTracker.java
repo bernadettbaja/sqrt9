@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import com.steps.serenity.LogInSteps;
 import com.steps.serenity.VacationTrackerSteps;
 
+import Helper.Dates;
 import Helper.constante;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -30,10 +31,8 @@ public class TestsVacationTracker
     {
     	logInSteps.login(constante.USERPM, constante.PASSPM);
     	vacationTrackerSteps.enter_track_vacation_tracker();
-    	int day = 16;
-    	String month = "dec";
-    	int year = 2014;
-    	vacationTrackerSteps.insert_startDate(day, month, year);
+    	vacationTrackerSteps.insert_StartDate(Dates.STARTDAY_PM, Dates.STARTMONTH_PM, Dates.STARTYEAR_PM);    	
+    	vacationTrackerSteps.insert_EndDate(Dates.ENDDAY_PM, Dates.ENDMONTH_PM, Dates.ENDYEAR_PM);
     	vacationTrackerSteps.insert_building_department();
     	vacationTrackerSteps.apply_selection();
     }
