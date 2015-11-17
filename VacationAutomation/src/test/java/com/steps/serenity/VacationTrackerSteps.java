@@ -34,19 +34,25 @@ public class VacationTrackerSteps extends ScenarioSteps
 	}
 	
 	@Step
-	public void insert_EndDate (int day, String month, int year)
+	public void insert_EndDate (int day, String month, int year) throws InterruptedException
 	{
 		vacationTracker.setEndDate(day, month, year);
 	}
 	
 	@Step
-	public void insert_building_department()
+	public void insert_building()
 	{
-		
+		vacationTracker.setBuilding();
+	}
+	
+	@Step
+	public void insert_department()
+	{
+		vacationTracker.setBuilding();
 	}
 	
 	public void apply_selection()
 	{
-		
+		vacationTracker.setDepartment();
 	}
 }
