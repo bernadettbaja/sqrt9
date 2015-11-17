@@ -12,6 +12,7 @@ public class VacationTrackerSteps extends ScenarioSteps
 	@Steps
     public LogInSteps logInSteps;
     public VacationOptionsPage vacationOptionsPage;
+    public VacationTracker vacationTracker;
     
     
 	@Step
@@ -27,9 +28,15 @@ public class VacationTrackerSteps extends ScenarioSteps
 	}
 	
 	@Step
-	public void insert_startDate_endDate()
+	public void insert_StartDate (int day, String month, int year) throws InterruptedException	
 	{
-		
+		vacationTracker.setStartDate(day, month, year);
+	}
+	
+	@Step
+	public void insert_EndDate (int day, String month, int year)
+	{
+		vacationTracker.setEndDate(day, month, year);
 	}
 	
 	@Step
