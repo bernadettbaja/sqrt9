@@ -10,27 +10,29 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+
+import com.steps.serenity.EndUserSteps;
 //import com.steps.serenity.EndUserSteps;
 import com.steps.serenity.LogInSteps;
 
 @RunWith(SerenityRunner.class)
-public class SearchByKeywordStory {
+public class approve_request {
 
     @Managed(uniqueSession = true)
     public WebDriver webdriver;
 
     @Steps
     public LogInSteps logInSteps;
+ 
 
   
-     @Test
-     public void new_request() {
-     logInSteps.login("alexandra.vlaic1", "Viking");
-     
-     
-     
-     
+    @Test
+    public void approve_request() {
+    	logInSteps.login("alexandra.vlaic1", "Viking");
+        logInSteps.GoToInbox();
+        logInSteps.checklist();
+        logInSteps.approve();
     }
-        }
-   
- 
+     
+    
+}     

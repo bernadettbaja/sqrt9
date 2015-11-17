@@ -24,5 +24,6 @@ public class NewRequestTest {
     {
     	logInSteps.login("bernadett.baja1", "testing");
     }
+    
 
 } 
