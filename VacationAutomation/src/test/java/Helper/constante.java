@@ -3,8 +3,8 @@ package Helper;
 
 public final class constante 
 {
-	public final static String USERDM = "test1";
-	public final static String PASSDM = "test1";
+	public final static String USERDM = "alexandra.vlaic1";
+	public final static String PASSDM = "Viking";
 	
 	public final static String USERPM = "tudor.butiri1";
 	public final static String PASSPM = "evoportal";
