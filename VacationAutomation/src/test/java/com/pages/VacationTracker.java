@@ -40,6 +40,9 @@ public class VacationTracker extends PageObject {
 	
 	@FindBy (css = "#departments dl dt div.hida")
 	private WebElementFacade pressDepartments;
+	
+	@FindBy (name = "_evovacation_WAR_EvoVacationportlet_buildingsCheckbox")
+	private WebElementFacade pressDepartmentsSelAll;
 
 	public void setStartDate(int day, String month, int year) throws InterruptedException {
 		trackerStarDate.click(); // It simply clicks on the StartDate calendar -
@@ -108,6 +111,8 @@ public class VacationTracker extends PageObject {
 	public void setBuilding()
 	{
 		pressBuildings.click();
+		pressDepartmentsSelAll.click();
+		
 	}
 	
 	public void setDepartment()
