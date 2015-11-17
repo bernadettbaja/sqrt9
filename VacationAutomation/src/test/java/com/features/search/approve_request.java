@@ -32,6 +32,7 @@ public class approve_request {
         logInSteps.GoToInbox();
         logInSteps.checklist();
         logInSteps.approve();
+        logInSteps.reject();
     }
      
     

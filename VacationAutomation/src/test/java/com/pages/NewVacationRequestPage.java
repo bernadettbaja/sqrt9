@@ -24,6 +24,10 @@ public class NewVacationRequestPage extends PageObject
 		endDate.click();
 	}
 	
+	public void select_VacationTypeContainer () {
+		
+		
+	}
 }
 
 
