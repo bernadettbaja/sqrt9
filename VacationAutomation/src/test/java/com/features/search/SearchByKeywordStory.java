@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import com.steps.serenity.EndUserSteps;
 
 @RunWith(SerenityRunner.class)
+
 public class SearchByKeywordStory {
 
     @Managed(uniqueSession = true)
