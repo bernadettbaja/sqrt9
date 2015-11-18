@@ -56,4 +56,12 @@ public class VacationTrackerSteps extends ScenarioSteps
 	{
 		vacationTracker.applyChanges();
 	}
+	
+	@Step
+	public void check_departmnet_and_building(String building, String department)
+	{
+		vacationTracker.check_dep_and_building(building, department);
+	}
+	
+	
 }

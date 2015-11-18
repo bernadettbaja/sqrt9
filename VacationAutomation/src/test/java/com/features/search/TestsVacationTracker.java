@@ -15,28 +15,39 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
 @RunWith(SerenityRunner.class)
-public class TestsVacationTracker 
-{
+public class TestsVacationTracker {
 	@Managed(uniqueSession = true)
-    public WebDriver webdriver;
-	
+	public WebDriver webdriver;
+
 	@Steps
 	public VacationTrackerSteps vacationTrackerSteps;
-	
+
 	@Steps
 	public LogInSteps logInSteps;
-	
-	
-    @Test
-    public void new_simple_request() throws InterruptedException 
-    {
-    	logInSteps.login(constante.USERPM, constante.PASSPM);
-    	vacationTrackerSteps.enter_track_vacation_tracker();
-    	vacationTrackerSteps.insert_StartDate(Dates.STARTDAY_PM, Dates.STARTMONTH_PM, Dates.STARTYEAR_PM);    	
-    	vacationTrackerSteps.insert_EndDate(Dates.ENDDAY_PM, Dates.ENDMONTH_PM, Dates.ENDYEAR_PM);
-    	vacationTrackerSteps.insert_building(departments.building);
-    	vacationTrackerSteps.insert_department(departments.departament);
-    	vacationTrackerSteps.apply_selection();
-    	
-    }
+
+	@Test
+	public void checkWebDepBuildingMain() throws InterruptedException 
+	{
+		logInSteps.login(constante.USERPM, constante.PASSPM);
+		vacationTrackerSteps.enter_track_vacation_tracker();
+		vacationTrackerSteps.insert_StartDate(Dates.STARTDAY_PM_WEB, Dates.STARTMONTH_PM_WEB, Dates.STARTYEAR_PM_WEB);
+		vacationTrackerSteps.insert_EndDate(Dates.ENDDAY_PM_WEB, Dates.ENDMONTH_PM_WEB, Dates.ENDYEAR_PM_WEB);
+		vacationTrackerSteps.insert_building(departments.building_main);
+		vacationTrackerSteps.insert_department(departments.departament_web);
+		vacationTrackerSteps.apply_selection();
+		vacationTrackerSteps.check_departmnet_and_building(departments.building_main, departments.departament_web);
+	}
+
+	@Test
+	public void checkQaDepBuildingDelta() throws InterruptedException 
+	{
+		logInSteps.login(constante.USERPM, constante.PASSPM);
+		vacationTrackerSteps.enter_track_vacation_tracker();
+		vacationTrackerSteps.insert_StartDate(Dates.STARTDAY_PM_QA, Dates.STARTMONTH_PM_QA, Dates.STARTYEAR_PM_QA);
+		vacationTrackerSteps.insert_EndDate(Dates.ENDDAY_PM_QA, Dates.ENDMONTH_PM_QA, Dates.ENDYEAR_PM_WEB);
+		vacationTrackerSteps.insert_building(departments.building_delta);
+		vacationTrackerSteps.insert_department(departments.departament_qa);
+		vacationTrackerSteps.apply_selection();
+		vacationTrackerSteps.check_departmnet_and_building(departments.building_delta, departments.departament_qa);
+	}
 }

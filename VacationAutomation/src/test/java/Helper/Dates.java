@@ -15,16 +15,22 @@ public class Dates
 	
 	//Tudor
 	//StartDate
-	public final static int STARTDAY_PM = 18;
-	public final static String STARTMONTH_PM = "nov";
-	public final static int STARTYEAR_PM = 2015;
+	public final static int STARTDAY_PM_WEB = 18;
+	public final static String STARTMONTH_PM_WEB = "nov";
+	public final static int STARTYEAR_PM_WEB = 2015;
+	
+	public final static int STARTDAY_PM_QA = 19;
+	public final static String STARTMONTH_PM_QA= "nov";
+	public final static int STARTYEAR_PM_QA = 2015;
 	
 	//EndDate
-	public final static int ENDDAY_PM = 24;
-	public final static String ENDMONTH_PM = "nov";
-	public final static int ENDYEAR_PM = 2015;
+	public final static int ENDDAY_PM_WEB = 24;
+	public final static String ENDMONTH_PM_WEB = "nov";
+	public final static int ENDYEAR_PM_WEB = 2015;
 	
-	
+	public final static int ENDDAY_PM_QA = 24;
+	public final static String ENDMONTH_PM_QA = "nov";
+	public final static int ENDYEAR_PM_QA = 2015;
 	
 	//Bernadette
 	
