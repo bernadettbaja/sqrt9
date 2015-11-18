@@ -19,10 +19,11 @@ public class InboxPage extends PageObject {
     @FindBy(css="input[id='_evovacation_WAR_EvoVacationportlet_multipleRejectButton']")
     private WebElementFacade reject;
     
-    @FindBy(name="portlet-msg-success")
+    @FindBy(css="div.portlet-msg-success")
     private WebElementFacade message;
-
     
+
+ 
     
     public void click_checklist() {
     	checklist.click();
@@ -34,6 +35,8 @@ public class InboxPage extends PageObject {
     	reject.click();
     }
     public void verifyMessage() {
-        Assert.assertTrue("Wrong !!!!", message.getText().contentEquals("Your request completed successfully"));
+        Assert.assertTrue("Wrong !!!!", message.getText().contentEquals("Your request completed successfully."));
   }
+    
+    
 }
