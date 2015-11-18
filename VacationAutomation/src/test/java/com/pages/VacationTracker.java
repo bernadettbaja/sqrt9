@@ -49,15 +49,16 @@ public class VacationTracker extends PageObject {
 	private WebElementFacade pressAllDepartments;
 	
 	@FindBy(css = "input[id='_evovacation_WAR_EvoVacationportlet_Web DepartmentCheckbox']")
-	private WebElementFacade pressWebDepartment;
-	
-	
+	private WebElementFacade pressWebDepartment;	
 
 	@FindBy(className = "aui-button-input")
 	private WebElementFacade pressApplyButton;
 
 	@FindBy(css = "#departments div.mutliSelect ul")
 	private WebElementFacade departmentsContainer;
+	
+	@FindBy(css = "#buildings div.mutliSelect ul")
+	private WebElementFacade buildingContainer;
 
 	public void setStartDate(int day, String month, int year) throws InterruptedException {
 		trackerStarDate.click(); // It simply clicks on the StartDate calendar -
@@ -69,21 +70,24 @@ public class VacationTracker extends PageObject {
 
 		// select year
 		for (WebElementFacade i : yearList)
-			if (i.getText().contentEquals(Integer.toString(year))) {
+			if (i.getText().contentEquals(Integer.toString(year))) 
+			{
 				i.click();
 				break;
 			}
 
 		// select month
 		for (WebElementFacade i : monthList)
-			if (i.getText().equalsIgnoreCase(month)) {
+			if (i.getText().equalsIgnoreCase(month)) 
+			{
 				i.click();
 				break;
 			}
 
 		// select day
 		for (WebElementFacade i : dayList)
-			if (i.getText().contentEquals(Integer.toString(day))) {
+			if (i.getText().contentEquals(Integer.toString(day))) 
+			{
 				i.click();
 				break;
 			}
@@ -119,40 +123,43 @@ public class VacationTracker extends PageObject {
 			}
 	}
 
-	public void setBuilding() {
+	public void setBuilding(String building) 
+	{
+		element(pressBuildings).waitUntilVisible();
 		pressBuildings.click();
+		element(pressAllBuildings).waitUntilVisible();
 		pressAllBuildings.click();
-		pressMainBuilding.click();
+		List<WebElement> buildingList = buildingContainer.findElements(By.cssSelector("li"));
+		for (WebElement buildingElement : buildingList) 
+		{
+			if (buildingElement.getText().contains(building)) 
+			{
+				buildingElement.click();			
+				break;
+			}
+		}
 		pressBuildings.click();
-
 	}
 
-	 public void setDepartment()
-	 {
-	 //element(pressDepartments).waitUntilVisible();
-	 pressDepartments.click();
-	 //element(pressWebDepartment).waitUntilVisible();
-	 pressAllDepartments.click();
-	 pressWebDepartment.click();
-	 }
+	public void setDepartment(String departmentName) 
+	{
+		element(pressDepartments).waitUntilVisible();
+		pressDepartments.click();
+		element(pressWebDepartment).waitUntilVisible();
+		pressAllDepartments.click();
+		List<WebElement> departmentList = departmentsContainer.findElements(By.cssSelector("li"));
+		for (WebElement departmentElement : departmentList) 
+		{		
+			if (departmentElement.getText().contains(departmentName)) 
+			{
+				departmentElement.click();			
+				break;
+			}
+		}
+	}
 
-//	public void setDepartment(String departmentName) {
-//		element(pressDepartments).waitUntilVisible();
-//		pressDepartments.click();
-//		List<WebElement> departmentList = departmentsContainer.findElements(By.cssSelector("li"));
-//		System.out.println("lista");
-//		for (WebElement departmentElement : departmentList) {
-//			System.out.println("element: " + departmentElement.getText());
-//			if (departmentElement.getText().contains(departmentName)) {
-//				 System.out.println(departmentElement.getText().contains(departmentName));
-//				departmentElement.findElement(By.cssSelector("input")).click();
-//				System.out.println(" aici = " + departmentElement.getText());
-//				break;
-//			}
-//		}
-//	}
-
-	public void applyChanges() {
+	public void applyChanges() 
+	{
 		pressApplyButton.click();
 	}
 

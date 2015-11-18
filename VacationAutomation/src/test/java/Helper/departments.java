@@ -8,8 +8,8 @@ public class departments
 	
 	
 	//Tudor
-	public final static String departament = "Web";
-	
+	public final static String departament = "Web Department";
+	public final static String building = "Main";
 	
 	
 	
