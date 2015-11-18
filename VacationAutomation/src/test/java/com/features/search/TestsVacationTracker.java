@@ -9,6 +9,7 @@ import com.steps.serenity.VacationTrackerSteps;
 
 import Helper.Dates;
 import Helper.constante;
+import Helper.departments;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -34,7 +35,9 @@ public class TestsVacationTracker
     	vacationTrackerSteps.insert_StartDate(Dates.STARTDAY_PM, Dates.STARTMONTH_PM, Dates.STARTYEAR_PM);    	
     	vacationTrackerSteps.insert_EndDate(Dates.ENDDAY_PM, Dates.ENDMONTH_PM, Dates.ENDYEAR_PM);
     	vacationTrackerSteps.insert_building();
+    	//vacationTrackerSteps.insert_department(departments.departament);
     	vacationTrackerSteps.insert_department();
     	vacationTrackerSteps.apply_selection();
+    	
     }
 }
