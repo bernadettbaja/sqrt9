@@ -33,7 +33,8 @@ public class TestsVacationTracker
     	vacationTrackerSteps.enter_track_vacation_tracker();
     	vacationTrackerSteps.insert_StartDate(Dates.STARTDAY_PM, Dates.STARTMONTH_PM, Dates.STARTYEAR_PM);    	
     	vacationTrackerSteps.insert_EndDate(Dates.ENDDAY_PM, Dates.ENDMONTH_PM, Dates.ENDYEAR_PM);
-    	vacationTrackerSteps.insert_building_department();
+    	vacationTrackerSteps.insert_building();
+    	vacationTrackerSteps.insert_department();
     	vacationTrackerSteps.apply_selection();
     }
 }

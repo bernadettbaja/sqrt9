@@ -20,6 +20,9 @@ public class VacationTracker extends PageObject {
 	@FindBy(name = "trackerStartDate")
 	private WebElementFacade trackerStarDate;
 
+	@FindBy(name = "trackerEndDate")
+	private WebElementFacade trackerEndDate;
+
 	@FindBy(css = "[style*='display: block'] .dp_caption")
 	private WebElementFacade title;
 
@@ -32,10 +35,50 @@ public class VacationTracker extends PageObject {
 	@FindBy(css = "[style*='display: block'] .dp_daypicker td:not([class*='disabled'])")
 	private List<WebElementFacade> dayList;
 	
-	public void setStartDate(int day, String month, int year) throws InterruptedException 
+	@FindBy (css = "#buildings dl dt div.hida")
+	private WebElementFacade pressBuildings;
+	
+	@FindBy (css = "#departments dl dt div.hida")
+	private WebElementFacade pressDepartments;
+	
+	@FindBy (name = "_evovacation_WAR_EvoVacationportlet_buildingsCheckbox")
+	private WebElementFacade pressDepartmentsSelAll;
+
+	public void setStartDate(int day, String month, int year) throws InterruptedException {
+		trackerStarDate.click(); // It simply clicks on the StartDate calendar -
+									// for the calendar to open
+
+		// it clicks two times on title
+		title.click();
+		title.click();
+
+		// select year
+		for (WebElementFacade i : yearList)
+			if (i.getText().contentEquals(Integer.toString(year))) {
+				i.click();
+				break;
+			}
+
+		// select month
+		for (WebElementFacade i : monthList)
+			if (i.getText().equalsIgnoreCase(month)) {
+				i.click();
+				break;
+			}
+
+		// select day
+		for (WebElementFacade i : dayList)
+			if (i.getText().contentEquals(Integer.toString(day))) {
+				i.click();
+				break;
+			}
+	}
+
+	public void setEndDate(int day, String month, int year) throws InterruptedException 
 	{
-		trackerStarDate.click(); // It simply clicks on the StartDate calendar - for the calendar to open
-		
+		trackerEndDate.click(); // It simply clicks on the StartDate calendar -
+								// for the calendar to open
+
 		// it clicks two times on title
 		title.click();
 		title.click();
@@ -61,15 +104,19 @@ public class VacationTracker extends PageObject {
 			if (i.getText().contentEquals(Integer.toString(day))) 
 			{
 				i.click();
-				dayList.wait(5000);
 				break;
 			}
 	}
 	
-	public void setEndDate(int day, String month, int year)
+	public void setBuilding()
 	{
-		trackerStarDate.click(); // It simply clicks on the StartDate calendar - for the calendar to open
+		pressBuildings.click();
+		pressDepartmentsSelAll.click();
 		
-		
+	}
+	
+	public void setDepartment()
+	{
+		pressDepartments.click();
 	}
 }
