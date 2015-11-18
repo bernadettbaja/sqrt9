@@ -45,10 +45,10 @@ public class VacationTracker extends PageObject {
 	@FindBy(css = "#departments dl dt div.hida")
 	private WebElementFacade pressDepartments;
 
-	@FindBy(css = "input[id='evovacation_WAR_EvoVacationportlet_departmentsALLCheckbox']")
+	@FindBy(css = "input[id='_evovacation_WAR_EvoVacationportlet_departmentsALLCheckbox']")
 	private WebElementFacade pressAllDepartments;
 	
-	@FindBy(css = "input[id='evovacation_WAR_EvoVacationportlet_Web DepartmentCheckbox']")
+	@FindBy(css = "input[id='_evovacation_WAR_EvoVacationportlet_Web DepartmentCheckbox']")
 	private WebElementFacade pressWebDepartment;
 	
 	
@@ -129,7 +129,7 @@ public class VacationTracker extends PageObject {
 
 	 public void setDepartment()
 	 {
-	 element(pressDepartments).waitUntilVisible();
+	 //element(pressDepartments).waitUntilVisible();
 	 pressDepartments.click();
 	 //element(pressWebDepartment).waitUntilVisible();
 	 pressAllDepartments.click();
