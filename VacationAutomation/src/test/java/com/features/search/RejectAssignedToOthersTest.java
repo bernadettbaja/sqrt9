@@ -19,7 +19,7 @@ import com.steps.serenity.LogInSteps;
 import Helper.constante;
 
 @RunWith(SerenityRunner.class)
-public class AssignedToOthersTest 
+public class RejectAssignedToOthersTest 
 {
 
     @Managed(uniqueSession = true)
