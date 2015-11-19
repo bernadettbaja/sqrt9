@@ -15,6 +15,8 @@ import com.steps.serenity.EndUserSteps;
 //import com.steps.serenity.EndUserSteps;
 import com.steps.serenity.LogInSteps;
 
+import Helper.constante;
+
 @RunWith(SerenityRunner.class)
 public class ApproveRequestTest 
 {
@@ -30,7 +32,7 @@ public class ApproveRequestTest
   
     @Test
     public void approveRequestTest() {
-    	logInSteps.login("alexandra.vlaic1", "Viking");
+    	logInSteps.login(constante.USERDM, constante.PASSDM);
     	approveRequestSteps.GoToInbox();
     	approveRequestSteps.checklist();
     	approveRequestSteps.approve();

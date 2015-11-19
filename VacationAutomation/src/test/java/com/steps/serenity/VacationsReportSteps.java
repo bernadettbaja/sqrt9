@@ -40,5 +40,14 @@ public class VacationsReportSteps extends ScenarioSteps {
 		vacationsReportPage.setYear(year);
 		
 	}
+	@Step
+	public void selectPending(){
+		vacationsReportPage.clicPending();
+	}
+	
+	@Step
+	public void selectExport(){
+	vacationsReportPage.clicExport();
 
+}
 }

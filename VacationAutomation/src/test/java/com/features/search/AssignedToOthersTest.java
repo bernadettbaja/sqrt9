@@ -16,6 +16,8 @@ import com.steps.serenity.EndUserSteps;
 //import com.steps.serenity.EndUserSteps;
 import com.steps.serenity.LogInSteps;
 
+import Helper.constante;
+
 @RunWith(SerenityRunner.class)
 public class AssignedToOthersTest 
 {
@@ -31,7 +33,7 @@ public class AssignedToOthersTest
   
     @Test
     public void approveRequestTest() {
-    	logInSteps.login("alexandra.vlaic1", "Viking");
+    	logInSteps.login(constante.USERDM, constante.PASSDM);
     	AssignedToOthersSteps.GoToInbox();
     	AssignedToOthersSteps.GotoAssignedToOthersTab();
     	AssignedToOthersSteps.checklist();

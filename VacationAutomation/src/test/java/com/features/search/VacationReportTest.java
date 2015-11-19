@@ -8,6 +8,7 @@ import com.steps.serenity.ApproveRequestSteps;
 import com.steps.serenity.LogInSteps;
 import com.steps.serenity.VacationsReportSteps;
 
+import Helper.constante;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -29,10 +30,12 @@ public class VacationReportTest {
 
 	@Test
 	public void approveRequestTest() {
-		logInSteps.login("alexandra.vlaic1", "Viking");
+		logInSteps.login(constante.USERDM, constante.PASSDM);
 		vacationsReportSteps.clicVacationReport();
 		vacationsReportSteps.selectMonth("May");
 		vacationsReportSteps.selectYear("2014");
+		vacationsReportSteps.selectPending();
+		vacationsReportSteps.selectExport();
 		
 	}
 
