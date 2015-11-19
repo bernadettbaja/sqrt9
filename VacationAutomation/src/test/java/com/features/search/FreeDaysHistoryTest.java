@@ -29,8 +29,11 @@ public class FreeDaysHistoryTest  {
 		freeDaysHistorySteps.clickFreeDaysHistoryMenuBtn();
 		freeDaysHistorySteps.selectValueFromType("Vacation days");
 		freeDaysHistorySteps.selectValueFromDays("6 - 10");
-		freeDaysHistorySteps.selectValueFromOperation("Removed days");
+		freeDaysHistorySteps.selectValueFromOperation("Removed Days");
 		freeDaysHistorySteps.clickApplyButton();
+		freeDaysHistorySteps.verifyMessage();
+
+		
 	}
 
 }

@@ -2,6 +2,7 @@ package com.pages;
 
 import java.util.List;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
 import net.serenitybdd.core.annotations.findby.By;
@@ -36,7 +37,10 @@ public class FreeDaysHistoryPage extends PageObject {
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_applyButton")
 	private WebElementFacade applyButton;
 
-	
+	@FindBy(css="div.portlet-msg-info")
+    private WebElementFacade message;
+
+
 	public void clickFreeDaysHistoryMenuBtn() {
 		element(freeDayHistoryMenuBtn).waitUntilVisible();
 		freeDayHistoryMenuBtn.click();
@@ -78,26 +82,37 @@ public class FreeDaysHistoryPage extends PageObject {
 
 	public void selectOperationFilterSearch(String filterOperation)
 	{
+		boolean found = false;
 		element(filterHistoryContainer).waitUntilVisible();
 
+//		List<WebElement> operationElementList = filterHistoryContainer
+//				.findElements(By.cssSelector(".column-three:nth-last-child(3) span.aui-field-choice"));
+		
 		List<WebElement> operationElementList = filterHistoryContainer
-				.findElements(By.cssSelector(".column-three:nth-last-child(3) span.aui-field-choice"));
+			.findElements(By.cssSelector("div[class$='aui-column-last'] div[class='column-content'] span[class='aui-field-content']"));
+		
 
 		for (WebElement operationElement : operationElementList) {
 			System.out.println("Expected: " + filterOperation);
 			System.out.println("Actual: " + operationElement.getText());
 			if (operationElement.getText().contains(filterOperation)) {
 				System.out.println("Found IT!!!!!");
+				found = true;
 				WebElement inputCheck = operationElement.findElement(By.cssSelector("input[type*='checkbox']"));
 				inputCheck.click();
 				waitABit(5000);
 				break;
 			}
 		}
+		Assert.assertTrue("Elementul nu a fost gasit in lista", found);
 	}
 	
 	public void clickApplyButton() {
 		applyButton.click();
 	}
+	
+    public void verifyMessage() {
+        Assert.assertTrue("Wrong !!!!", message.getText().contentEquals("No history available."));
+}
 }
 

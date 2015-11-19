@@ -32,6 +32,11 @@ public class FreeDaysHistorySteps extends ScenarioSteps {
     @Step
 	public void clickApplyButton() {
     	freeDaysHistoryPage.clickApplyButton();
+    }
+    
+    @Step
+    	public void verifyMessage(){
+    	freeDaysHistoryPage.verifyMessage();
 	}
    }
 
