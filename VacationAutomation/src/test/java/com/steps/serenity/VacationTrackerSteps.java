@@ -64,10 +64,9 @@ public class VacationTrackerSteps extends ScenarioSteps
 	}
 	
 	@Step
-	public void check_if_list_is_empty()
+	public void check_if_list_is_empty(String building, String department)
 	{
-		vacationTracker.check_list();
+		vacationTracker.check_list(building, department);
 	}
-	
 	
 }

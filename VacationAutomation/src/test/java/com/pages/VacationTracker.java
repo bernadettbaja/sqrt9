@@ -54,6 +54,9 @@ public class VacationTracker extends PageObject {
 	@FindBy(css = "#buildings div.mutliSelect ul")
 	private WebElementFacade buildingContainer;
 	
+	@FindBy(css = "a[class='aui-paginator-link aui-paginator-next-link']")
+	private WebElementFacade pressNextButton;
+	
 //	@FindBy(css = "table tbody tr td")
 //	private WebElementFacade showDepartmentContainerTable;
 //
@@ -179,21 +182,29 @@ public class VacationTracker extends PageObject {
 		for (WebElement j : showDepartmentList) 
 		{		
 			Assert.assertTrue(j.getText().contains(department));			  
-		}		  	
+		}
 	}
-	
-	public void check_list()
+
+	public void check_list(String building, String department)
 	{
+		waitABit(2000);
+		
 		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
 		for (WebElement i : showBuildingList)
 		{
-			Assert.assertTrue(i.getText().isEmpty());			 
+			Assert.assertTrue(i.getText().contains(building));			 
 		}
 				
 		List<WebElement> showDepartmentList = getDriver().findElements(By.cssSelector("table tbody tr td.col-department"));
 		for (WebElement j : showDepartmentList) 
 		{		
-			Assert.assertTrue(j.getText().isEmpty());			  
-		}	
+			Assert.assertTrue(j.getText().contains(department));			  
+		}
+		
+		if (pressNextButton.isVisible())
+		{
+			pressNextButton.click();
+			check_list(building, department);		
+		}
 	}
 }
