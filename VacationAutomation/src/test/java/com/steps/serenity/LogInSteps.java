@@ -13,7 +13,6 @@ import static org.hamcrest.Matchers.hasItem;
 import org.junit.Assert;
 
 public class LogInSteps extends ScenarioSteps {
-	VacationOptionsPage obj;
 
 	LogInPage logInPage;
 
