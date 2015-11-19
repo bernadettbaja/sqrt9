@@ -1,16 +1,12 @@
 package com.pages;
 
-import java.util.List;
-
-import org.openqa.selenium.WebElement;
-
+import Helper.constante;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
-import net.serenitybdd.core.annotations.findby.By;
 
-@DefaultUrl("http://172.22.4.88:9090/vacation")
+@DefaultUrl(constante.BASEURL + "/vacation")
 public class VacationsReportPage extends PageObject {
 	//	private WebDriver driver;
 
@@ -28,14 +24,14 @@ public class VacationsReportPage extends PageObject {
 	@FindBy(css = "select#_evovacation_WAR_EvoVacationportlet_exportYear")
 	private WebElementFacade selectYear;
 
-	@FindBy(css = "input[id='_evovacation_WAR_EvoVacationportlet_approved']")
-	private WebElementFacade SelectApproved;
+	@FindBy(css = "label[for='_evovacation_WAR_EvoVacationportlet_pending']")
+	private WebElementFacade selectPending;
 
 	@FindBy(css = "input[id='_evovacation_WAR_EvoVacationportlet_CIM']")
 	private WebElementFacade SelectCIM;
 
-	@FindBy(css = "input[id='_evovacation_WAR_EvoVacationportlet_exportButton']")
-	private WebElementFacade Export;
+	@FindBy(css="input[id='_evovacation_WAR_EvoVacationportlet_exportButton']")
+	private WebElementFacade export;
 
 	// public void setMonth(String month) {
 	// element(selectMonth).waitUntilVisible();
@@ -58,6 +54,7 @@ public class VacationsReportPage extends PageObject {
 
 	public void selectMonth(String month){
 		//		element(selectMonth).waitUntilVisible();
+		
 		selectMonth.click();
 		selectMonth.click();
 		//waitABit(1000);
@@ -78,5 +75,12 @@ public class VacationsReportPage extends PageObject {
 		element(VacationsReport).waitUntilVisible();
 		VacationsReport.click();
 	}
-
+	public void clicPending(){
+		selectPending.click();
+	}
+	
+	public void clicExport(){
+		export.click();
+		waitABit(7000);
+	}
 }
