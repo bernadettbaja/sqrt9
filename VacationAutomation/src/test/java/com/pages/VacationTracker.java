@@ -181,4 +181,19 @@ public class VacationTracker extends PageObject {
 			Assert.assertTrue(j.getText().contains(department));			  
 		}		  	
 	}
+	
+	public void check_list()
+	{
+		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
+		for (WebElement i : showBuildingList)
+		{
+			Assert.assertTrue(i.getText().isEmpty());			 
+		}
+				
+		List<WebElement> showDepartmentList = getDriver().findElements(By.cssSelector("table tbody tr td.col-department"));
+		for (WebElement j : showDepartmentList) 
+		{		
+			Assert.assertTrue(j.getText().isEmpty());			  
+		}	
+	}
 }
