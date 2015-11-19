@@ -58,15 +58,23 @@ public class VacationTrackerSteps extends ScenarioSteps
 	}
 	
 	@Step
-	public void check_departmnet_and_building(String building, String department)
+	public void check_department_and_building_in_list(String building, String department)
 	{
-		vacationTracker.check_dep_and_building(building, department);
+		vacationTracker.check_dep_and_building_in_first_page(building, department);
 	}
 	
 	@Step
 	public void check_if_list_is_empty(String building, String department)
 	{
-		vacationTracker.check_list(building, department);
+		vacationTracker.check_list_empty(building, department);
 	}
+	
+	@Step
+	public void check_department_and_building_in_all_list(String building, String department)
+	{
+		vacationTracker.check_dep_and_building_in_all_list(building, department);
+	}
+	
+	
 	
 }

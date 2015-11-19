@@ -170,7 +170,7 @@ public class VacationTracker extends PageObject {
 		pressApplyButton.click();
 	}
 		
-	public void check_dep_and_building(String building, String department)
+	public void check_dep_and_building_in_first_page(String building, String department)
 	{
 		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
 		for (WebElement i : showBuildingList)
@@ -185,10 +185,25 @@ public class VacationTracker extends PageObject {
 		}
 	}
 
-	public void check_list(String building, String department)
+	public void check_list_empty(String building, String department)
+	{	
+		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
+		for (WebElement i : showBuildingList)
+		{
+			Assert.assertFalse(i.getText().contains(building));			 
+		}
+				
+		List<WebElement> showDepartmentList = getDriver().findElements(By.cssSelector("table tbody tr td.col-department"));
+		for (WebElement j : showDepartmentList) 
+		{		
+			Assert.assertFalse(j.getText().contains(department));			  
+		}
+	}
+	
+	
+	public void check_dep_and_building_in_all_list(String building, String department)
 	{
 		waitABit(2000);
-		
 		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
 		for (WebElement i : showBuildingList)
 		{
@@ -204,7 +219,7 @@ public class VacationTracker extends PageObject {
 		if (pressNextButton.isVisible())
 		{
 			pressNextButton.click();
-			check_list(building, department);		
+			check_dep_and_building_in_all_list(building, department);		
 		}
 	}
 }

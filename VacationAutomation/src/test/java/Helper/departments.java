@@ -8,11 +8,11 @@ public class departments
 	
 	
 	//Tudor
-	public final static String departament_web = "Web Dep";
-	public final static String building_main = "Main";
+	public final static String DEPARTMENT_WEB = "Web Dep";
+	public final static String BUILDING_MAIN = "Main";
 	
-	public final static String departament_qa = "QA";
-	public final static String building_delta = "Delta";
+	public final static String DEPARTMENT_QA = "QA";
+	public final static String BUILDING_DELTA = "Delta";
 	
 	
 	//Bernadette
