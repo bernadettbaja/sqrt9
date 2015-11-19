@@ -19,7 +19,7 @@ import com.steps.serenity.LogInSteps;
 import Helper.constante;
 
 @RunWith(SerenityRunner.class)
-public class RejectAssignedToOthersTest 
+public class AssignedToOthersTest 
 {
 
     @Managed(uniqueSession = true)
@@ -30,7 +30,8 @@ public class RejectAssignedToOthersTest
     
     @Steps
     public AssignedToOthersSteps AssignedToOthersSteps;
-  
+
+    
     @Test
     public void approveRequestTest() {
     	logInSteps.login(constante.USERDM, constante.PASSDM);
@@ -39,7 +40,7 @@ public class RejectAssignedToOthersTest
     	AssignedToOthersSteps.checklist();
     	AssignedToOthersSteps.reject();
     	AssignedToOthersSteps.verifymessage();
-    	
+    
     }
      
   
