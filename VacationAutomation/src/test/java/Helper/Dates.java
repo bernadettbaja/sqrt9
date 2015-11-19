@@ -28,8 +28,8 @@ public class Dates
 	public final static String ENDMONTH_PM_WEB = "nov";
 	public final static int ENDYEAR_PM_WEB = 2015;
 	
-	public final static int ENDDAY_PM_QA = 24;
-	public final static String ENDMONTH_PM_QA = "nov";
+	public final static int ENDDAY_PM_QA = 31;
+	public final static String ENDMONTH_PM_QA = "dec";
 	public final static int ENDYEAR_PM_QA = 2015;
 	
 	//Bernadette

@@ -26,7 +26,7 @@ public class TestsVacationTracker {
 	public LogInSteps logInSteps;
 
 	@Test
-	public void checkWebDepBuildingMain() throws InterruptedException 
+	public void check_WebDep_BuildingMain() throws InterruptedException 
 	{
 		logInSteps.login(constante.USERPM, constante.PASSPM);
 		vacationTrackerSteps.enter_track_vacation_tracker();
@@ -36,10 +36,11 @@ public class TestsVacationTracker {
 		vacationTrackerSteps.insert_department(departments.departament_web);
 		vacationTrackerSteps.apply_selection();
 		vacationTrackerSteps.check_departmnet_and_building(departments.building_main, departments.departament_web);
+		webdriver.close();
 	}
 
 	@Test
-	public void checkQaDepBuildingDelta() throws InterruptedException 
+	public void check_QaDep_BuildingDelta() throws InterruptedException 
 	{
 		logInSteps.login(constante.USERPM, constante.PASSPM);
 		vacationTrackerSteps.enter_track_vacation_tracker();
@@ -49,5 +50,20 @@ public class TestsVacationTracker {
 		vacationTrackerSteps.insert_department(departments.departament_qa);
 		vacationTrackerSteps.apply_selection();
 		vacationTrackerSteps.check_departmnet_and_building(departments.building_delta, departments.departament_qa);
+		webdriver.close();
 	}
+	
+//	@Test
+//	public void check_startDate_after_endDate() throws InterruptedException 
+//	{
+//		logInSteps.login(constante.USERPM, constante.PASSPM);
+//		vacationTrackerSteps.enter_track_vacation_tracker();
+//		vacationTrackerSteps.insert_StartDate(Dates.STARTDAY_PM_QA, Dates.STARTMONTH_PM_QA, Dates.STARTYEAR_PM_QA);
+//		vacationTrackerSteps.insert_EndDate(Dates.ENDDAY_PM_QA, Dates.ENDMONTH_PM_QA, Dates.ENDYEAR_PM_WEB);
+//		vacationTrackerSteps.insert_building(departments.building_delta);
+//		vacationTrackerSteps.insert_department(departments.departament_qa);
+//		vacationTrackerSteps.apply_selection();
+//		vacationTrackerSteps.check_departmnet_and_building(departments.building_delta, departments.departament_qa);
+//		webdriver.close();
+//	}
 }

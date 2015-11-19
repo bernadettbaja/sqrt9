@@ -36,9 +36,6 @@ public class VacationTracker extends PageObject {
 	@FindBy(css = "#buildings dl dt div.hida")
 	private WebElementFacade pressBuildings;
 
-	@FindBy(css = "input[id='_evovacation_WAR_EvoVacationportlet_Main BuildingCheckbox']")
-	private WebElementFacade pressMainBuilding;
-
 	@FindBy(name = "_evovacation_WAR_EvoVacationportlet_buildingsCheckbox")
 	private WebElementFacade pressAllBuildings;
 
@@ -46,10 +43,7 @@ public class VacationTracker extends PageObject {
 	private WebElementFacade pressDepartments;
 
 	@FindBy(css = "input[id='_evovacation_WAR_EvoVacationportlet_departmentsALLCheckbox']")
-	private WebElementFacade pressAllDepartments;
-	
-	@FindBy(css = "input[id='_evovacation_WAR_EvoVacationportlet_Web DepartmentCheckbox']")
-	private WebElementFacade pressWebDepartment;	
+	private WebElementFacade pressAllDepartments;	
 
 	@FindBy(className = "aui-button-input")
 	private WebElementFacade pressApplyButton;
@@ -110,21 +104,24 @@ public class VacationTracker extends PageObject {
 
 		// select year
 		for (WebElementFacade i : yearList)
-			if (i.getText().contentEquals(Integer.toString(year))) {
+			if (i.getText().contentEquals(Integer.toString(year))) 
+			{
 				i.click();
 				break;
 			}
 
 		// select month
 		for (WebElementFacade i : monthList)
-			if (i.getText().equalsIgnoreCase(month)) {
+			if (i.getText().equalsIgnoreCase(month)) 
+			{
 				i.click();
 				break;
 			}
 
 		// select day
 		for (WebElementFacade i : dayList)
-			if (i.getText().contentEquals(Integer.toString(day))) {
+			if (i.getText().contentEquals(Integer.toString(day))) 
+			{
 				i.click();
 				break;
 			}
@@ -136,17 +133,15 @@ public class VacationTracker extends PageObject {
 		pressBuildings.click();
 		element(pressAllBuildings).waitUntilVisible();
 		pressAllBuildings.click();
-//		List<WebElement> buildingList = buildingContainer.findElements(By.cssSelector("li"));
-//		for (WebElement buildingElement : buildingList) 
-//		{
-//			if (buildingElement.getText().contains(building)) 
-//			{
-//				System.out.println("aici " + buildingElement.getText());
-//				buildingElement.click();			
-//				break;
-//			}
-//		}
-		pressMainBuilding.click();
+		List<WebElement> buildingList = buildingContainer.findElements(By.cssSelector("li"));
+		for (WebElement buildingElement : buildingList) 
+		{
+			if (buildingElement.getText().trim().toLowerCase().contains(building.toLowerCase())) 
+			{
+				buildingElement.findElement(By.cssSelector("input")).click();			
+				break;
+			}
+		}
 		pressBuildings.click();
 	}
 
@@ -154,14 +149,13 @@ public class VacationTracker extends PageObject {
 	{
 		element(pressDepartments).waitUntilVisible();
 		pressDepartments.click();
-		element(pressWebDepartment).waitUntilVisible();
+		element(pressAllDepartments).waitUntilVisible();
 		pressAllDepartments.click();
 		List<WebElement> departmentList = departmentsContainer.findElements(By.cssSelector("li"));
 		for (WebElement departmentElement : departmentList) 
 		{		
 			if (departmentElement.getText().contains(departmentName)) 
 			{
-				System.out.println("aici " + departmentElement.getText());
 				departmentElement.click();			
 				break;
 			}
@@ -172,23 +166,19 @@ public class VacationTracker extends PageObject {
 	{
 		pressApplyButton.click();
 	}
-	
-	
+		
 	public void check_dep_and_building(String building, String department)
 	{
 		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
 		for (WebElement i : showBuildingList)
 		{
-			//System.out.println("aici " + i.getText());
 			Assert.assertTrue(i.getText().contains(building));			 
 		}
-		
-		
+				
 		List<WebElement> showDepartmentList = getDriver().findElements(By.cssSelector("table tbody tr td.col-department"));
 		for (WebElement j : showDepartmentList) 
 		{		
 			Assert.assertTrue(j.getText().contains(department));			  
 		}		  	
 	}
-
 }
