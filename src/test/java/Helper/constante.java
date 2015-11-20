@@ -15,4 +15,5 @@ public final class constante
 	public final static String BASEURL = "http://172.22.4.88:9090";
 	public final static String ENVURL="http://172.22.4.88:9090";
 	
+	public final static String NOVACATIONMESS = "No vacations were found.";
 }

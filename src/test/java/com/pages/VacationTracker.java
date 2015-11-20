@@ -57,6 +57,8 @@ public class VacationTracker extends PageObject {
 	@FindBy(css = "a[class='aui-paginator-link aui-paginator-next-link']")
 	private WebElementFacade pressNextButton;
 	
+	@FindBy(css = "div.portlet-msg-info")
+	private WebElement noVacation;
 //	@FindBy(css = "table tbody tr td")
 //	private WebElementFacade showDepartmentContainerTable;
 //
@@ -203,7 +205,7 @@ public class VacationTracker extends PageObject {
 	
 	public void check_dep_and_building_in_all_list(String building, String department)
 	{
-		waitABit(2000);
+		waitABit(500);
 		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
 		for (WebElement i : showBuildingList)
 		{
@@ -221,5 +223,24 @@ public class VacationTracker extends PageObject {
 			pressNextButton.click();
 			check_dep_and_building_in_all_list(building, department);		
 		}
+	}
+	
+	public void checkQaDepDeltaBuildNotInList(String building, String department, String noVacationMess)
+	{
+		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
+		for (WebElement i : showBuildingList)
+		{
+			Assert.assertFalse(i.getText().contains(building));			 
+		}
+				
+		List<WebElement> showDepartmentList = getDriver().findElements(By.cssSelector("table tbody tr td.col-department"));
+		for (WebElement j : showDepartmentList) 
+		{		
+			Assert.assertFalse(j.getText().contains(department));
+			
+		}
+		
+		Assert.assertTrue(noVacation.getText().equals(noVacationMess));
+		
 	}
 }
