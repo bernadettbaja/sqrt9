@@ -77,7 +77,7 @@ public class TestsVacationTracker {
 		vacationTrackerSteps.insertBuilding(departments.BUILDING_MAIN);
 		vacationTrackerSteps.insertDepartment(departments.DEPARTMENT_WEB);
 		vacationTrackerSteps.applySelection();
-		vacationTrackerSteps.check_department_and_building_in_all_list(departments.BUILDING_MAIN, departments.DEPARTMENT_WEB);
+		vacationTrackerSteps.checkDepartmentAndBuildingInAllList(departments.BUILDING_MAIN, departments.DEPARTMENT_WEB);
 		webdriver.close();
 	}	
 	
