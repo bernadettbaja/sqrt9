@@ -22,45 +22,45 @@ public class VacationTrackerSteps extends ScenarioSteps
     }
 	
 	@Step
-	public void enter_track_vacation_tracker()
+	public void enterTrackVacationTracker()
 	{
-		vacationOptionsPage.create_page_trackVacationTracker();
+		vacationOptionsPage.enterPageTrackVacationTracker();
 	}
 	
 	@Step
-	public void insert_StartDate (int day, String month, int year) throws InterruptedException	
+	public void insertStartDate (int day, String month, int year) throws InterruptedException	
 	{
 		vacationTracker.setStartDate(day, month, year);
 	}
 	
 	@Step
-	public void insert_EndDate (int day, String month, int year) throws InterruptedException
+	public void insertEndDate (int day, String month, int year) throws InterruptedException
 	{
 		vacationTracker.setEndDate(day, month, year);
 	}
 	
 	@Step
-	public void insert_building(String building)
+	public void insertBuilding(String building)
 	{
 		vacationTracker.setBuilding(building);
 	}
 	
 	@Step
-	public void insert_department(String department)
+	public void insertDepartment(String department)
 	{
 		vacationTracker.setDepartment(department);
 	}
 	
 	@Step
-	public void apply_selection()
+	public void applySelection()
 	{
 		vacationTracker.applyChanges();
 	}
 	
 	@Step
-	public void check_department_and_building_in_list(String building, String department)
+	public void checkDepartmentAndBuildingInFirstPage(String building, String department)
 	{
-		vacationTracker.check_dep_and_building_in_first_page(building, department);
+		vacationTracker.checkDepAndBuildInFirstPage(building, department);
 	}
 	
 	@Step

@@ -26,7 +26,7 @@ public class InboxPage extends PageObject {
 
  
     
-    public void click_checklist() {
+    public void clickChecklist() {
     	checklist.click();
     }
     public void approve() {

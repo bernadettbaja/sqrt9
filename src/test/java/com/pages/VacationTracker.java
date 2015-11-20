@@ -59,14 +59,10 @@ public class VacationTracker extends PageObject {
 	
 	@FindBy(css = "div.portlet-msg-info")
 	private WebElement noVacation;
-//	@FindBy(css = "table tbody tr td")
-//	private WebElementFacade showDepartmentContainerTable;
-//
-//	@FindBy(css = "table tbody tr td")
-//	private WebElementFacade showBuildingContainerTable;
 	
 	
-	public void setStartDate(int day, String month, int year) throws InterruptedException {
+	public void setStartDate(int day, String month, int year) throws InterruptedException 
+	{
 		trackerStarDate.click(); // It simply clicks on the StartDate calendar -
 									// for the calendar to open
 
@@ -172,7 +168,7 @@ public class VacationTracker extends PageObject {
 		pressApplyButton.click();
 	}
 		
-	public void check_dep_and_building_in_first_page(String building, String department)
+	public void checkDepAndBuildInFirstPage(String building, String department)
 	{
 		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
 		for (WebElement i : showBuildingList)

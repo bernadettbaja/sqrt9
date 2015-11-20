@@ -25,18 +25,18 @@ public class NewRequestSignOutApproveTest {
     public LogInSteps logInSteps;
     
     @Steps
-    public LogOutSteps LogOutSteps;
+    public LogOutSteps logOutSteps;
    
     @Steps
     public NewVacationRequestSteps newVacationRequestSteps;
     
     @Steps
-    public ApproveRequestSteps ApproveRequestSteps;
+    public ApproveRequestSteps approveRequestSteps;
     
    
 
     @Test
-    public void new_simple_request() 
+    public void logoutScenarioTest() 
     {
     	logInSteps.login(constante.USERPM, constante.PASSPM);
     	newVacationRequestSteps.clickNewVacationRequestFromTheLeftMenu();
@@ -46,12 +46,13 @@ public class NewRequestSignOutApproveTest {
     	newVacationRequestSteps.clickAddComment();
     	newVacationRequestSteps.typeComment("Concediu");
     	newVacationRequestSteps.clickSaveButton();
-    	LogOutSteps.signOut();
+    	logOutSteps.clickProfilePicture();
+    	logOutSteps.signOut();
     	logInSteps.login(constante.USERDM, constante.PASSDM);
-    	ApproveRequestSteps.GoToInbox();
-    	ApproveRequestSteps.checklist();
-    	ApproveRequestSteps.approve();
-    	ApproveRequestSteps.verifymessage();
+    	approveRequestSteps.GoToInbox();
+    	approveRequestSteps.checklist();
+    	approveRequestSteps.approve();
+    	approveRequestSteps.verifymessage();
     	
     }
 }
