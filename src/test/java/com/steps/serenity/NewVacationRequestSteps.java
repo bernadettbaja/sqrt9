@@ -20,7 +20,7 @@ public class NewVacationRequestSteps extends ScenarioSteps {
 	}
 
 	@Step
-	public void click_NewVacationRequestFromTheLeftMenu() {
+	public void clickNewVacationRequestFromTheLeftMenu() {
 		vacationOptionsPage.create_page_newVacationRequest();
 	}
 
