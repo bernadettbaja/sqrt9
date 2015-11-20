@@ -183,7 +183,7 @@ public class VacationTracker extends PageObject {
 		}
 	}
 
-	public void check_list_empty(String building, String department)
+	public void checkListEmpty(String building, String department)
 	{	
 		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
 		for (WebElement i : showBuildingList)

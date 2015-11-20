@@ -63,7 +63,7 @@ public class TestsVacationTracker {
 		vacationTrackerSteps.insertBuilding(departments.BUILDING_MAIN);
 		vacationTrackerSteps.insertDepartment(departments.DEPARTMENT_WEB);
 		vacationTrackerSteps.applySelection();
-		vacationTrackerSteps.check_if_list_is_empty(departments.BUILDING_MAIN, departments.DEPARTMENT_WEB);
+		vacationTrackerSteps.checkIfListIsEmpty(departments.BUILDING_MAIN, departments.DEPARTMENT_WEB);
 		webdriver.close();
 	}
 	
