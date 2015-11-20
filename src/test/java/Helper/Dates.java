@@ -11,8 +11,6 @@ public class Dates
 	
 	
 	
-	
-	
 	//Tudor
 	//StartDate
 	public final static int STARTDAY_PM_WEB = 18;
