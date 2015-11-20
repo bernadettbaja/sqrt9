@@ -59,14 +59,10 @@ public class VacationTracker extends PageObject {
 	
 	@FindBy(css = "div.portlet-msg-info")
 	private WebElement noVacation;
-//	@FindBy(css = "table tbody tr td")
-//	private WebElementFacade showDepartmentContainerTable;
-//
-//	@FindBy(css = "table tbody tr td")
-//	private WebElementFacade showBuildingContainerTable;
 	
 	
-	public void setStartDate(int day, String month, int year) throws InterruptedException {
+	public void setStartDate(int day, String month, int year) throws InterruptedException 
+	{
 		trackerStarDate.click(); // It simply clicks on the StartDate calendar -
 									// for the calendar to open
 

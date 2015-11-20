@@ -30,8 +30,8 @@ public class TestsVacationTracker {
 	{
 		logInSteps.login(constante.USERPM, constante.PASSPM);
 		vacationTrackerSteps.enterTrackVacationTracker();
-		vacationTrackerSteps.insert_StartDate(Dates.STARTDAY_PM_WEB, Dates.STARTMONTH_PM_WEB, Dates.STARTYEAR_PM_WEB);
-		vacationTrackerSteps.insert_EndDate(Dates.ENDDAY_PM_WEB, Dates.ENDMONTH_PM_WEB, Dates.ENDYEAR_PM_WEB);
+		vacationTrackerSteps.insertStartDate(Dates.STARTDAY_PM_WEB, Dates.STARTMONTH_PM_WEB, Dates.STARTYEAR_PM_WEB);
+		vacationTrackerSteps.insertEndDate(Dates.ENDDAY_PM_WEB, Dates.ENDMONTH_PM_WEB, Dates.ENDYEAR_PM_WEB);
 		vacationTrackerSteps.insert_building(departments.BUILDING_MAIN);
 		vacationTrackerSteps.insert_department(departments.DEPARTMENT_WEB);
 		vacationTrackerSteps.apply_selection();

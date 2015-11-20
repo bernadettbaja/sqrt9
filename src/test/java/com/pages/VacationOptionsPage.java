@@ -44,7 +44,7 @@ public class VacationOptionsPage extends PageObject
 	@FindBy (css = "a[href*='menuItem=vacation-tracker']")
 	private WebElementFacade trackVacationTracker;
 	
-	public void create_page_trackVacationTracker() 
+	public void enterPageTrackVacationTracker() 
     {
 		trackVacationTracker.click();
     }

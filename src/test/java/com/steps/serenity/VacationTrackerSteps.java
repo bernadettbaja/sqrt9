@@ -22,19 +22,19 @@ public class VacationTrackerSteps extends ScenarioSteps
     }
 	
 	@Step
-	public void enter_track_vacation_tracker()
+	public void enterTrackVacationTracker()
 	{
-		vacationOptionsPage.create_page_trackVacationTracker();
+		vacationOptionsPage.enterPageTrackVacationTracker();
 	}
 	
 	@Step
-	public void insert_StartDate (int day, String month, int year) throws InterruptedException	
+	public void insertStartDate (int day, String month, int year) throws InterruptedException	
 	{
 		vacationTracker.setStartDate(day, month, year);
 	}
 	
 	@Step
-	public void insert_EndDate (int day, String month, int year) throws InterruptedException
+	public void insertEndDate (int day, String month, int year) throws InterruptedException
 	{
 		vacationTracker.setEndDate(day, month, year);
 	}
