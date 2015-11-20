@@ -28,7 +28,7 @@ public class AssignedToOthersPage extends PageObject {
     	assign.click();
     }
     
-    public void click_checklist() {
+    public void clickChecklist() {
     	checklist.click();
     }
  

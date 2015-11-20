@@ -1,28 +1,21 @@
 package com.steps.serenity;
 
-import com.pages.LogInPage;
 import com.pages.InboxPage;
 import com.pages.AssignedToOthersPage;
 import com.pages.VacationOptionsPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.hasItem;
-
-import org.junit.Assert;
 
 public class AssignedToOthersSteps extends ScenarioSteps 
 {
- VacationOptionsPage obj;
-
+	VacationOptionsPage vacationOptionsPage;
 	InboxPage InboxPage;
 	AssignedToOthersPage AssignedToOthersPage;
 
 	@Step
 	public void GoToInbox() {
-		obj.create_page_inboxVacManagement();
+		vacationOptionsPage.create_page_inboxVacManagement();
 	}
 	@Step
 	public void GotoAssignedToOthersTab(){
@@ -31,7 +24,7 @@ public class AssignedToOthersSteps extends ScenarioSteps
 
 	@Step
 	public void checklist() {
-		AssignedToOthersPage.click_checklist();
+		AssignedToOthersPage.clickChecklist();
 	}
 
 	@Step
@@ -43,6 +36,6 @@ public class AssignedToOthersSteps extends ScenarioSteps
 		AssignedToOthersPage.verifyMessage();
 		
 	}
-//	asdasdA
+
 
 }

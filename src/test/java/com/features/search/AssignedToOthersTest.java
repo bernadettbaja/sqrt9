@@ -29,17 +29,17 @@ public class AssignedToOthersTest
     public LogInSteps logInSteps;
     
     @Steps
-    public AssignedToOthersSteps AssignedToOthersSteps;
+    public AssignedToOthersSteps assignedToOthersSteps;
 
     
     @Test
     public void approveRequestTest() {
     	logInSteps.login(constante.USERDM, constante.PASSDM);
-    	AssignedToOthersSteps.GoToInbox();
-    	AssignedToOthersSteps.GotoAssignedToOthersTab();
-    	AssignedToOthersSteps.checklist();
-    	AssignedToOthersSteps.reject();
-    	AssignedToOthersSteps.verifymessage();
+    	assignedToOthersSteps.GoToInbox();
+    	assignedToOthersSteps.GotoAssignedToOthersTab();
+    	assignedToOthersSteps.checklist();
+    	assignedToOthersSteps.reject();
+    	assignedToOthersSteps.verifymessage();
     
     }
      
