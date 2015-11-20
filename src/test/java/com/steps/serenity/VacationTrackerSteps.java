@@ -75,6 +75,10 @@ public class VacationTrackerSteps extends ScenarioSteps
 		vacationTracker.check_dep_and_building_in_all_list(building, department);
 	}
 	
-	
+	@Step
+	public void checkQaDepartmentBuildingDeltaNoEntry(String building, String department, String noVacationMess)
+	{
+		vacationTracker.checkQaDepDeltaBuildNotInList(building,  department, noVacationMess);
+	}
 	
 }

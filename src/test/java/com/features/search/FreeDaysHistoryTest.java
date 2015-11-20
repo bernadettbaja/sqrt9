@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import com.steps.serenity.FreeDaysHistorySteps;
 import com.steps.serenity.LogInSteps;
 
+import Helper.constante;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -25,7 +26,7 @@ public class FreeDaysHistoryTest  {
 	
 	@Test
 	public void freeDaysHistoryTest(){
-		logInSteps.login("bernadett.baja1", "testing");
+		logInSteps.login(constante.USERDEV, constante.PASSDEV);
 		freeDaysHistorySteps.clickFreeDaysHistoryMenuBtn();
 		freeDaysHistorySteps.selectValueFromType("Vacation days");
 		freeDaysHistorySteps.selectValueFromDays("6 - 10");
