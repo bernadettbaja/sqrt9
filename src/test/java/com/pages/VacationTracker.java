@@ -168,7 +168,7 @@ public class VacationTracker extends PageObject {
 		pressApplyButton.click();
 	}
 		
-	public void check_dep_and_building_in_first_page(String building, String department)
+	public void checkDepAndBuildInFirstPage(String building, String department)
 	{
 		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
 		for (WebElement i : showBuildingList)

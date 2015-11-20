@@ -40,27 +40,27 @@ public class VacationTrackerSteps extends ScenarioSteps
 	}
 	
 	@Step
-	public void insert_building(String building)
+	public void insertBuilding(String building)
 	{
 		vacationTracker.setBuilding(building);
 	}
 	
 	@Step
-	public void insert_department(String department)
+	public void insertDepartment(String department)
 	{
 		vacationTracker.setDepartment(department);
 	}
 	
 	@Step
-	public void apply_selection()
+	public void applySelection()
 	{
 		vacationTracker.applyChanges();
 	}
 	
 	@Step
-	public void check_department_and_building_in_list(String building, String department)
+	public void checkDepartmentAndBuildingInFirstPage(String building, String department)
 	{
-		vacationTracker.check_dep_and_building_in_first_page(building, department);
+		vacationTracker.checkDepAndBuildInFirstPage(building, department);
 	}
 	
 	@Step
