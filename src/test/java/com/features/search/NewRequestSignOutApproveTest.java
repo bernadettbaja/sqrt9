@@ -39,7 +39,7 @@ public class NewRequestSignOutApproveTest {
     public void logoutScenarioTest() 
     {
     	logInSteps.login(constante.USERPM, constante.PASSPM);
-    	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
+    	newVacationRequestSteps.clickNewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(12, "May", 2016);
     	newVacationRequestSteps.selectEndDate(13, "May", 2016);
     	newVacationRequestSteps.selectHoliday();
