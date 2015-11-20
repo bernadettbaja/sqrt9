@@ -13,13 +13,8 @@ public class VacationsReportPage extends PageObject {
 	@FindBy(css = "a[href*='vacation-report']")
 	private WebElementFacade VacationsReport;
 
-	//	@FindBy(css = "select#_evovacation_WAR_EvoVacationportlet_exportMonth")
-	//	private WebElementFacade selectMonth;
-
-	//@FindBy(css = "div.aui-datepicker-focused select.aui-datepicker-month")
 	@FindBy(css = "select#_evovacation_WAR_EvoVacationportlet_exportMonth")
 	private WebElementFacade selectMonth;
-
 
 	@FindBy(css = "select#_evovacation_WAR_EvoVacationportlet_exportYear")
 	private WebElementFacade selectYear;
@@ -33,53 +28,35 @@ public class VacationsReportPage extends PageObject {
 	@FindBy(css="input[id='_evovacation_WAR_EvoVacationportlet_exportButton']")
 	private WebElementFacade export;
 
-	// public void setMonth(String month) {
-	// element(selectMonth).waitUntilVisible();
-	// selectMonth.selectByVisibleText(month);
-	// }
-	//
+	
 	public void setYear(String year) {
 		element(selectYear).waitUntilVisible();
-		
 		selectYear.click();
 		selectYear.click();
 		selectYear.selectByVisibleText(year);
 		waitABit(5000);
 	}
-
-	//	public void selectMonth(String month) {
-	//		Select dropdown = new Select(driver.findElement(By.id("_evovacation_WAR_EvoVacationportlet_exportMonth")));
-	//		dropdown.selectByVisibleText("May");
-	//	}
-
+	
+	
 	public void selectMonth(String month){
-		//		element(selectMonth).waitUntilVisible();
-		
 		selectMonth.click();
 		selectMonth.click();
-		//waitABit(1000);
 		selectMonth.selectByVisibleText(month);
-		//selectMonth.selectByVisibleText(month);
-		//waitABit(1000);
-		
-		/*List<WebElement> monthList = selectMonth.findElements(By.cssSelector("option"));
-		for(WebElement monthElement:monthList){
-			System.out.println("element: "+monthElement.getText());
-			if(monthElement.getText().contains(month)){
-				monthElement.click();
-			}
-		}*/
 	}
+	
 
-	public void clicVacationReport() {
+	public void clickVacationReport() {
 		element(VacationsReport).waitUntilVisible();
 		VacationsReport.click();
 	}
-	public void clicPending(){
+	
+	
+	public void clickPending(){
 		selectPending.click();
 	}
 	
-	public void clicExport(){
+	
+	public void clickExport(){
 		export.click();
 		waitABit(7000);
 	}

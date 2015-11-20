@@ -31,7 +31,7 @@ public class VacationReportTest {
 	@Test
 	public void approveRequestTest() {
 		logInSteps.login(constante.USERDM, constante.PASSDM);
-		vacationsReportSteps.clicVacationReport();
+		vacationsReportSteps.clickVacationReport();
 		vacationsReportSteps.selectMonth("May");
 		vacationsReportSteps.selectYear("2014");
 		vacationsReportSteps.selectPending();
