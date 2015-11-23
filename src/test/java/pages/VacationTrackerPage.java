@@ -59,7 +59,7 @@ public class VacationTrackerPage extends PageObject {
 	@FindBy(css = "div.portlet-msg-info")
 	private WebElement noVacation;
 	
-	@FindBy(css = ".aui-field-input aui-field-input-select aui-field-input-menu")
+	@FindBy(css = "[name='_evovacation_WAR_EvoVacationportlet_itemsPerPage']")
 	private WebElementFacade pressDropDownRowsSelector;
 	
 	@FindBy(css = "option[value='5']")
@@ -249,11 +249,12 @@ public class VacationTrackerPage extends PageObject {
 	{
 		waitABit(500);
 		pressDropDownRowsSelector.click();
-		getDriver().findElement(By.cssSelector("option[value=" + rows + "]" )).click();
+		getDriver().findElement(By.cssSelector("#_evovacation_WAR_EvoVacationportlet_evozonVacationsSearchContainerPageIteratorTop_itemsPerPage option[value='" + rows + "']" )).click();
 		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
-		int k=0;
+		
 		if (pressNextButton.isVisible())
 		{
+			int k=1;
 			for (WebElement i : showBuildingList)
 			{
 				k++;				 
@@ -264,6 +265,7 @@ public class VacationTrackerPage extends PageObject {
 		}
 		else
 		{
+			int k=1;
 			for (WebElement i : showBuildingList)
 			{
 				k++;				 
