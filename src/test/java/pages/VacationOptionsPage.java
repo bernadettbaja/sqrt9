@@ -1,12 +1,12 @@
 package pages;
 
-import helper.constante;
+import helper.Constante;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl(constante.BASEURL + "/vacation")
+@DefaultUrl(Constante.BASEURL + "/vacation")
 public class VacationOptionsPage extends PageObject
 {
 	@FindBy(css = "a[href*='menuItem=new-request']")

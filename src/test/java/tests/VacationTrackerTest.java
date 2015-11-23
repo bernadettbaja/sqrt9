@@ -5,8 +5,8 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import helper.Dates;
-import helper.constante;
-import helper.departments;
+import helper.Constante;
+import helper.Departments;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -97,14 +97,14 @@ public class VacationTrackerTest {
 	@Test
 	public void checkChangeNumberOfRows() throws InterruptedException
 	{
-		logInSteps.login(constante.USERPM, constante.PASSPM);
+		logInSteps.login(Constante.USERPM, Constante.PASSPM);
 		vacationTrackerSteps.enterTrackVacationTracker();
 		vacationTrackerSteps.insertStartDate(Dates.STARTDAY_PM_WEB, Dates.STARTMONTH_PM_WEB, Dates.STARTYEAR_PM_WEB);
 		vacationTrackerSteps.insertEndDate(Dates.ENDDAY_PM_WEB_PAGE, Dates.ENDMONTH_PM_WEB_PAGE, Dates.ENDYEAR_PM_WEB_PAGE);
-		vacationTrackerSteps.insertBuilding(departments.BUILDING_MAIN);
-		vacationTrackerSteps.insertDepartment(departments.DEPARTMENT_WEB);
+		vacationTrackerSteps.insertBuilding(Departments.BUILDING_MAIN);
+		vacationTrackerSteps.insertDepartment(Departments.DEPARTMENT_WEB);
 		vacationTrackerSteps.applySelection();
-		vacationTrackerSteps.checkNumberOfRowsModification(departments.BUILDING_MAIN, constante.NoRows);
+		vacationTrackerSteps.checkNumberOfRowsModification(Departments.BUILDING_MAIN, Constante.NoRows);
 		webdriver.close();
 	}
 }

@@ -1,7 +1,7 @@
 package helper;
 
 
-public final class constante 
+public final class Constante 
 {
 	public final static String USERDM = "alexandra.vlaic1";
 	public final static String PASSDM = "Viking";

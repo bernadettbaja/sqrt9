@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import helper.constante;
+import helper.Constante;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -25,7 +25,7 @@ public class MyRequestsTest {
 
     @Test
     public void myRequestsTest(){
-    	logInSteps.login(constante.USERDEV, constante.PASSDEV);
+    	logInSteps.login(Constante.USERDEV, Constante.PASSDEV);
     	myRequestsSteps.clickMyRequestsBtn();
     	myRequestsSteps.checkShowFutureVacation();
     	myRequestsSteps.selectFiler("6 - 10");

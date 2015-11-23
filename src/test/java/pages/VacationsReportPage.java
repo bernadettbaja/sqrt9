@@ -1,12 +1,12 @@
 package pages;
 
-import helper.constante;
+import helper.Constante;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 
-@DefaultUrl(constante.BASEURL + "/vacation")
+@DefaultUrl(Constante.BASEURL + "/vacation")
 public class VacationsReportPage extends PageObject {
 	//	private WebDriver driver;
 

@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import helper.Dates;
-import helper.constante;
+import helper.Constante;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -30,7 +30,7 @@ public class VacationReportTest {
 
 	@Test
 	public void approveRequestTest() {
-		logInSteps.login(constante.USERDM, constante.PASSDM);
+		logInSteps.login(Constante.USERDM, Constante.PASSDM);
 		vacationsReportSteps.clickVacationReport();
 		vacationsReportSteps.selectMonth(Dates.pickmonth);
 		vacationsReportSteps.selectYear(Dates.pickyear);

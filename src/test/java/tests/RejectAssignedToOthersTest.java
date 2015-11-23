@@ -12,7 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import helper.constante;
+import helper.Constante;
 
 @RunWith(SerenityRunner.class)
 public class RejectAssignedToOthersTest 
@@ -30,7 +30,7 @@ public class RejectAssignedToOthersTest
     
     @Test
     public void approveRequestTest() {
-     logInSteps.login(constante.USERDM, constante.PASSDM);
+     logInSteps.login(Constante.USERDM, Constante.PASSDM);
      assignedToOthersSteps.GoToInbox();
      assignedToOthersSteps.GotoAssignedToOthersTab();
      assignedToOthersSteps.checklist();

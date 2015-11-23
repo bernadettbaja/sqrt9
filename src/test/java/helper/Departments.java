@@ -1,6 +1,6 @@
 package helper;
 
-public class departments 
+public class Departments 
 {
 	//Alexandra
 	

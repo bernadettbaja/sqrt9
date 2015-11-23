@@ -2,13 +2,13 @@ package pages;
 
 import java.util.List;
 
-import helper.constante;
+import helper.Constante;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl(constante.BASEURL + "/vacation")
+@DefaultUrl(Constante.BASEURL + "/vacation")
 public class DatePickerBernadettPage extends PageObject {
 
 	@FindBy(css = "[style*='display: block'] .dp_caption")

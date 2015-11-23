@@ -14,7 +14,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import helper.constante;
+import helper.Constante;
 
 @RunWith(SerenityRunner.class)
 public class RejectRequestTest 
@@ -31,7 +31,7 @@ public class RejectRequestTest
   
     @Test
     public void approveRequestTest() {
-    	logInSteps.login(constante.USERDM, constante.PASSDM);
+    	logInSteps.login(Constante.USERDM, Constante.PASSDM);
     	rejectRequestSteps.GoToInbox();
     	rejectRequestSteps.checklist();
     	rejectRequestSteps.reject();
