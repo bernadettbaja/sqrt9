@@ -14,7 +14,7 @@ public class NewVacationRequestSteps extends ScenarioSteps {
 
 	@Step
 	public void selectStartDate(int day, String month, int year) {
-		newVacationRequestPage.click_startDate();
+		newVacationRequestPage.clickStartDate();
 		datePickerBernadettPage.setDate(day, month, year);
 	}
 
@@ -25,7 +25,7 @@ public class NewVacationRequestSteps extends ScenarioSteps {
 
 	@Step
 	public void selectEndDate(int day, String month, int year) {
-		newVacationRequestPage.click_endDate();
+		newVacationRequestPage.clickEndDate();
 		datePickerBernadettPage.setDate(day, month, year);
 		
 	}

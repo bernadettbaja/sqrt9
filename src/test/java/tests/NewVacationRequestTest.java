@@ -29,8 +29,8 @@ public class NewVacationRequestTest {
     {
     	logInSteps.login(Constante.USERDEV, Constante.PASSDEV);
     	newVacationRequestSteps.clickNewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(Dates.pickstartday, Dates.pickstartmonth, Dates.pickstartyear);
-    	newVacationRequestSteps.selectEndDate(Dates.pickendday, Dates.pickendmonth, Dates.pickendyear);
+    	newVacationRequestSteps.selectStartDate(Dates.PICKSTARTDATE, Dates.PICKSTARTMONTH, Dates.PICKSTARTYEAR);
+    	newVacationRequestSteps.selectEndDate(Dates.PICKENDDATE, Dates.PICKENDMONTH, Dates.PICKENDYEAR);
 //    	newVacationRequestSteps.selectHoliday();
 //    	newVacationRequestSteps.selectVacationWithoutPayment();
 //    	newVacationRequestSteps.selectSickleave();
@@ -38,7 +38,7 @@ public class NewVacationRequestTest {
     	newVacationRequestSteps.selectMaternityleave();
     	newVacationRequestSteps.selectMaternityLeaveOption();
     	newVacationRequestSteps.clickAddComment();
-    	newVacationRequestSteps.typeComment("Comentariuasdasd asd asd");
+    	newVacationRequestSteps.typeComment(Constante.MESS);
     	newVacationRequestSteps.clickSaveButton();
  
     	

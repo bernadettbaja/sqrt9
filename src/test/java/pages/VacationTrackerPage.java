@@ -3,7 +3,6 @@ package pages;
 import java.util.List;
 
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import helper.Constante;
 import net.serenitybdd.core.annotations.findby.By;

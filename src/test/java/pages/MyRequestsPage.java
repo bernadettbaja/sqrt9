@@ -37,16 +37,11 @@ public class MyRequestsPage extends PageObject {
 				elementNow.findElement(By.cssSelector("input[type='checkbox']")).click();
 				break theFor;
 			}
-		
 		}
-	
 	}
-	
-	
-	public void clickMyRequestsBtn() {
+			public void clickMyRequestsBtn() {
 		element(myRequests).waitUntilVisible();
 		myRequests.click();
-
 	}
 
 	public void clickShowOnlyFutureVacations() {
@@ -56,6 +51,5 @@ public class MyRequestsPage extends PageObject {
 
 	public void selectDaysNumberFilter(String filterDays) {
 		element(typeFilterContainer).waitUntilVisible();
-
 	}
 }

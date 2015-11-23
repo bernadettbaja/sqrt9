@@ -20,7 +20,7 @@ public class VacationOptionsPage extends PageObject
 	@FindBy(css = "a[href*='menuItem=my-requests']")
 	private WebElementFacade newMyRequests;
 	
-	public void create_page_newMyRequests() 
+	public void createPageMyRequests() 
     {
 		newMyRequests.click();
     }
@@ -28,7 +28,7 @@ public class VacationOptionsPage extends PageObject
 	@FindBy(css = "a[href*='menuItem=my-free-days']")
     private WebElementFacade newMyFreeDays;
 	
-	public void create_page_newMyFreeDays() 
+	public void createPageMyFreeDays() 
     {
 		newMyFreeDays.click();
     }
@@ -36,7 +36,7 @@ public class VacationOptionsPage extends PageObject
 	@FindBy (css = "a[href*='menuItem=free-days-history']")
 	private WebElementFacade newFreeDaysHistory;
 	
-	public void create_page_newFreeDaysHistory() 
+	public void createPageFreeDaysHistory() 
     {
 		newFreeDaysHistory.click();
     }
@@ -60,13 +60,8 @@ public class VacationOptionsPage extends PageObject
 	@FindBy (css = "a[href*='menuItem=view-vacations']")
 	private WebElementFacade viewVacations;
 	
-	public void create_page_viewVacations() 
+	public void createPageViewVacations() 
     {
 		viewVacations.click();
-    }
-	
-	//    public void enter_keywords(String keyword) {
-//        searchTerms.type(keyword);
-//    }
-  
+    }  
 }

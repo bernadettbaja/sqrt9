@@ -16,6 +16,7 @@ public final class Constante
 	
 	
 	public final static String NOVACATIONMESS = "No vacations were found.";
+	public final static String MESS = "Mesajul a fost introdus";
 	
 	public final static int NoRows = 5;
 }
