@@ -59,6 +59,12 @@ public class VacationTrackerPage extends PageObject {
 	@FindBy(css = "div.portlet-msg-info")
 	private WebElement noVacation;
 	
+	@FindBy(css = ".aui-field-input aui-field-input-select aui-field-input-menu")
+	private WebElementFacade pressDropDownRowsSelector;
+	
+	@FindBy(css = "option[value='5']")
+	private WebElementFacade pressNoOfRows;
+	
 	
 	public void setStartDate(int day, String month, int year) throws InterruptedException 
 	{
@@ -239,25 +245,30 @@ public class VacationTrackerPage extends PageObject {
 		
 	}
 	
-	public void checkChangeInNumberOfRows(String building, String department)
+	public void checkChangeInNumberOfRows(String building, String department, int rows)
 	{
 		waitABit(500);
+		pressDropDownRowsSelector.click();
+		getDriver().findElement(By.cssSelector("option[value=" + rows + "]" )).click();
 		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
-		for (WebElement i : showBuildingList)
-		{
-			Assert.assertTrue(i.getText().contains(building));			 
-		}
-				
-		List<WebElement> showDepartmentList = getDriver().findElements(By.cssSelector("table tbody tr td.col-department"));
-		for (WebElement j : showDepartmentList) 
-		{		
-			Assert.assertTrue(j.getText().contains(department));			  
-		}
-		
+		int k=0;
 		if (pressNextButton.isVisible())
 		{
+			for (WebElement i : showBuildingList)
+			{
+				k++;				 
+			}
+			Assert.assertTrue(k==rows-1);
 			pressNextButton.click();
-			checkDepartBuildingInAllList(building, department);		
+			checkDepartBuildingInAllList(building, department);	
+		}
+		else
+		{
+			for (WebElement i : showBuildingList)
+			{
+				k++;				 
+			}
+			Assert.assertTrue(k<rows);
 		}
 	}
 }
