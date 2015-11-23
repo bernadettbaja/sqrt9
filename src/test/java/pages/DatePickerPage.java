@@ -9,7 +9,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl(Constante.BASEURL + "/vacation")
-public class DatePickerBernadettPage extends PageObject {
+public class DatePickerPage extends PageObject {
 
 	@FindBy(css = "[style*='display: block'] .dp_caption")
 	private WebElementFacade title;

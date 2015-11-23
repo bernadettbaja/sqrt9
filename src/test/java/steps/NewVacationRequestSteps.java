@@ -2,7 +2,7 @@ package steps;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
-import pages.DatePickerBernadettPage;
+import pages.DatePickerPage;
 import pages.NewVacationRequestPage;
 import pages.VacationOptionsPage;
 
@@ -10,7 +10,7 @@ public class NewVacationRequestSteps extends ScenarioSteps {
 
 	NewVacationRequestPage newVacationRequestPage;
 	VacationOptionsPage vacationOptionsPage;
-	DatePickerBernadettPage datePickerBernadettPage;
+	DatePickerPage datePickerBernadettPage;
 
 	@Step
 	public void selectStartDate(int day, String month, int year) {
