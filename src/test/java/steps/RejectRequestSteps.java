@@ -5,7 +5,7 @@ import net.thucydides.core.steps.ScenarioSteps;
 import pages.InboxPage;
 import pages.VacationOptionsPage;
 
-public class ApproveRequestSteps extends ScenarioSteps 
+public class RejectRequestSteps extends ScenarioSteps 
 {
  VacationOptionsPage vacationOptionsPage;
 
@@ -22,10 +22,9 @@ public class ApproveRequestSteps extends ScenarioSteps
 	}
 
 	@Step
-	public void approve() {
-		InboxPage.approve();
+	public void reject() {
+		InboxPage.reject();
 	}
-
 	@Step
 	public void verifymessage(){
 		InboxPage.verifyMessage();

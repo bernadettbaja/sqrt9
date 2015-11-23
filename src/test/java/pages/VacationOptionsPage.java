@@ -12,7 +12,7 @@ public class VacationOptionsPage extends PageObject
 	@FindBy(css = "a[href*='menuItem=new-request']")
     private WebElementFacade newVacationRequest;
 	
-	public void create_page_newVacationRequest() 
+	public void createPageNewVacationRequest() 
     {
     	newVacationRequest.click();
     }
