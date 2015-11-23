@@ -16,4 +16,6 @@ public final class constante
 	
 	
 	public final static String NOVACATIONMESS = "No vacations were found.";
+	
+	public final static int NoRows = 5;
 }
