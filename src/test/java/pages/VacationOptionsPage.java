@@ -52,7 +52,7 @@ public class VacationOptionsPage extends PageObject
 	@FindBy (css = "a[href*='menuItem=inbox']")
 	private WebElementFacade inboxVacManagement;
 	
-	public void create_page_inboxVacManagement() 
+	public void createPageInboxVacManagement() 
     {
 		inboxVacManagement.click();
     }
