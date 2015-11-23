@@ -81,9 +81,9 @@ public class VacationTrackerSteps extends ScenarioSteps
 	}
 	
 	@Step
-	public void checkNumberOfRowsModification(String building, String department, int rows)
+	public void checkNumberOfRowsModification(String building, int rows)
 	{
-		vacationTracker.checkChangeInNumberOfRows(building, department, rows);
+		vacationTracker.checkChangeInNumberOfRows(building, rows);
 	}
 	
 }

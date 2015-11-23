@@ -245,32 +245,44 @@ public class VacationTrackerPage extends PageObject {
 		
 	}
 	
-	public void checkChangeInNumberOfRows(String building, String department, int rows)
+	public void checkChangeInNumberOfRows(String building, int rows)
 	{
 		waitABit(500);
 		pressDropDownRowsSelector.click();
 		getDriver().findElement(By.cssSelector("#_evovacation_WAR_EvoVacationportlet_evozonVacationsSearchContainerPageIteratorTop_itemsPerPage option[value='" + rows + "']" )).click();
+		checkBuildingInNumberOfRows(building, rows);
+	}
+	
+	public void checkBuildingInNumberOfRows (String building, int rows)
+	{
+		waitABit(500);
 		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
+		int k=0;
 		
 		if (pressNextButton.isVisible())
 		{
-			int k=1;
 			for (WebElement i : showBuildingList)
 			{
-				k++;				 
+				k++;		 
 			}
-			Assert.assertTrue(k==rows-1);
-			pressNextButton.click();
-			checkDepartBuildingInAllList(building, department);	
+			System.out.println("k = " + k);
+			if (k==rows)
+				{
+					pressNextButton.click();
+					checkBuildingInNumberOfRows(building, rows);
+				}
+			else
+				{
+				Assert.assertTrue(k==rows);	
+				}
 		}
 		else
 		{
-			int k=1;
 			for (WebElement i : showBuildingList)
 			{
-				k++;				 
+				k++;		 
 			}
-			Assert.assertTrue(k<rows);
+			Assert.assertTrue(k<=rows);
 		}
 	}
 }
