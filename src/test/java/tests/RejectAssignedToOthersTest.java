@@ -1,4 +1,4 @@
-package com.features.search;
+package tests;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 //import net.thucydides.core.annotations.Issue;
@@ -10,13 +10,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.steps.serenity.ApproveRequestSteps;
-import com.steps.serenity.AssignedToOthersSteps;
-import com.steps.serenity.EndUserSteps;
+import steps.ApproveRequestSteps;
+import steps.AssignedToOthersSteps;
+import steps.EndUserSteps;
 //import com.steps.serenity.EndUserSteps;
-import com.steps.serenity.LogInSteps;
+import steps.LogInSteps;
 
-import Helper.constante;
+import helper.constante;
 
 @RunWith(SerenityRunner.class)
 public class RejectAssignedToOthersTest 
