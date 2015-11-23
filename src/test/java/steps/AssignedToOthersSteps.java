@@ -14,7 +14,7 @@ public class AssignedToOthersSteps extends ScenarioSteps
 
 	@Step
 	public void GoToInbox() {
-		vacationOptionsPage.create_page_inboxVacManagement();
+		vacationOptionsPage.createPageInboxVacManagement();
 	}
 	@Step
 	public void GotoAssignedToOthersTab(){

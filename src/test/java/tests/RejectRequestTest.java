@@ -6,9 +6,9 @@ import net.thucydides.core.annotations.Managed;
 //import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
 import steps.ApproveRequestSteps;
-import steps.AssignedToOthersSteps;
 import steps.EndUserSteps;
 import steps.LogInSteps;
+import steps.RejectRequestSteps;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ import org.openqa.selenium.WebDriver;
 import helper.constante;
 
 @RunWith(SerenityRunner.class)
-public class AssignedToOthersTest 
+public class RejectRequestTest 
 {
 
     @Managed(uniqueSession = true)
@@ -27,20 +27,17 @@ public class AssignedToOthersTest
     public LogInSteps logInSteps;
     
     @Steps
-    public AssignedToOthersSteps assignedToOthersSteps;
-
-    
+    public RejectRequestSteps rejectRequestSteps;
+  
     @Test
     public void approveRequestTest() {
     	logInSteps.login(constante.USERDM, constante.PASSDM);
-    	assignedToOthersSteps.GoToInbox();
-    	assignedToOthersSteps.GotoAssignedToOthersTab();
-    	assignedToOthersSteps.checklist();
-    	assignedToOthersSteps.reject();
-    	assignedToOthersSteps.verifymessage();
-    
+    	rejectRequestSteps.GoToInbox();
+    	rejectRequestSteps.checklist();
+    	rejectRequestSteps.reject();
+    	rejectRequestSteps.verifymessage();
     }
      
   
     
-}  
+}    
