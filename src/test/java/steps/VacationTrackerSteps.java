@@ -80,4 +80,10 @@ public class VacationTrackerSteps extends ScenarioSteps
 		vacationTracker.checkQaDepDeltaBuildNotInList(building, department, noVacationMess);
 	}
 	
+	@Step
+	public void checkNumberOfRowsModification(String building, String department)
+	{
+		vacationTracker.checkChangeInNumberOfRows(building, department);
+	}
+	
 }
