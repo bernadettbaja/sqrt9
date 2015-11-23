@@ -3,6 +3,7 @@ package steps;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.steps.ScenarioSteps;
+import pages.DatePickerPage;
 import pages.VacationOptionsPage;
 import pages.VacationTrackerPage;
 
@@ -12,6 +13,7 @@ public class VacationTrackerSteps extends ScenarioSteps
     public LogInSteps logInSteps;
     public VacationOptionsPage vacationOptionsPage;
     public VacationTrackerPage vacationTracker;
+    
     
     
 	@Step

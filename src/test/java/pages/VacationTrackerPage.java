@@ -13,7 +13,8 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl(Constante.BASEURL + "/vacation")
-public class VacationTrackerPage extends PageObject {
+public class VacationTrackerPage extends PageObject 
+{
 	@FindBy(name = "trackerStartDate")
 	private WebElementFacade trackerStarDate;
 
@@ -65,72 +66,75 @@ public class VacationTrackerPage extends PageObject {
 	@FindBy(css = "option[value='5']")
 	private WebElementFacade pressNoOfRows;
 	
+	public DatePickerPage DatePicker;
 	
 	public void setStartDate(int day, String month, int year) throws InterruptedException 
 	{
 		trackerStarDate.click(); // It simply clicks on the StartDate calendar -
 									// for the calendar to open
 
-		// it clicks two times on title
-		title.click();
-		title.click();
-
-		// select year
-		for (WebElementFacade i : yearList)
-			if (i.getText().contentEquals(Integer.toString(year))) 
-			{
-				i.click();
-				break;
-			}
-
-		// select month
-		for (WebElementFacade i : monthList)
-			if (i.getText().equalsIgnoreCase(month)) 
-			{
-				i.click();
-				break;
-			}
-
-		// select day
-		for (WebElementFacade i : dayList)
-			if (i.getText().contentEquals(Integer.toString(day))) 
-			{
-				i.click();
-				break;
-			}
+		DatePicker.setDate(day, month, year);
+		
+//		// it clicks two times on title
+//		title.click();
+//		title.click();
+//
+//		// select year
+//		for (WebElementFacade i : yearList)
+//			if (i.getText().contentEquals(Integer.toString(year))) 
+//			{
+//				i.click();
+//				break;
+//			}
+//
+//		// select month
+//		for (WebElementFacade i : monthList)
+//			if (i.getText().equalsIgnoreCase(month)) 
+//			{
+//				i.click();
+//				break;
+//			}
+//
+//		// select day
+//		for (WebElementFacade i : dayList)
+//			if (i.getText().contentEquals(Integer.toString(day))) 
+//			{
+//				i.click();
+//				break;
+//			}
 	}
 
 	public void setEndDate(int day, String month, int year) throws InterruptedException {
 		trackerEndDate.click(); // It simply clicks on the StartDate calendar -
 								// for the calendar to open
-
-		// it clicks two times on title
-		title.click();
-		title.click();
-
-		// select year
-		for (WebElementFacade i : yearList)
-			if (i.getText().contentEquals(Integer.toString(year))) 
-			{
-				i.click();
-				break;
-			}
-
-		// select month
-		for (WebElementFacade i : monthList)
-			if (i.getText().equalsIgnoreCase(month)) 
-			{
-				i.click();
-				break;
-			}
-
-		// select day
-		for (WebElementFacade i : dayList)
-			if (i.getText().contentEquals(Integer.toString(day))) 
-			{
-				i.click();
-				break;
-			}
+		DatePicker.setDate(day, month, year);
+//		// it clicks two times on title
+//		title.click();
+//		title.click();
+//
+//		// select year
+//		for (WebElementFacade i : yearList)
+//			if (i.getText().contentEquals(Integer.toString(year))) 
+//			{
+//				i.click();
+//				break;
+//			}
+//
+//		// select month
+//		for (WebElementFacade i : monthList)
+//			if (i.getText().equalsIgnoreCase(month)) 
+//			{
+//				i.click();
+//				break;
+//			}
+//
+//		// select day
+//		for (WebElementFacade i : dayList)
+//			if (i.getText().contentEquals(Integer.toString(day))) 
+//			{
+//				i.click();
+//				break;
+//			}
 	}
 
 	public void setBuilding(String building) 

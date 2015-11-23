@@ -21,7 +21,7 @@ public class VacationTrackerTest {
 
 	@Steps
 	public VacationTrackerSteps vacationTrackerSteps;
-	public DatePickerPage setDates;
+	
 
 	@Steps
 	public LogInSteps logInSteps;
@@ -31,8 +31,8 @@ public class VacationTrackerTest {
 	{
 		logInSteps.login(Constante.USERPM, Constante.PASSPM);
 		vacationTrackerSteps.enterTrackVacationTracker();
-		setDates.setDate(Dates.STARTDAY_PM_WEB, Dates.STARTMONTH_PM_WEB, Dates.STARTYEAR_PM_WEB);
-		setDates.setDate(Dates.ENDDAY_PM_WEB, Dates.ENDMONTH_PM_WEB, Dates.ENDYEAR_PM_WEB);
+		vacationTrackerSteps.insertStartDate(Dates.STARTDAY_PM_WEB, Dates.STARTMONTH_PM_WEB, Dates.STARTYEAR_PM_WEB);
+		vacationTrackerSteps.insertEndDate(Dates.ENDDAY_PM_WEB, Dates.ENDMONTH_PM_WEB, Dates.ENDYEAR_PM_WEB);
 		vacationTrackerSteps.insertBuilding(Departments.BUILDING_MAIN);
 		vacationTrackerSteps.insertDepartment(Departments.DEPARTMENT_WEB);
 		vacationTrackerSteps.applySelection();
