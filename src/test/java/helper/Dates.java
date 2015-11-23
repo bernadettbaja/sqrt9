@@ -61,6 +61,13 @@ public class Dates
 	//Bernadette
 	
 	
+	public final static int pickstartday=6;
+	public final static String pickstartmonth = "Mar";
+	public final static int pickstartyear= 2018;
+	
+	public final static int pickendday=7;
+	public final static String pickendmonth = "Mar";
+	public final static int pickendyear= 2018;
 	
 	
 	
