@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import helper.Dates;
 import helper.constante;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -39,8 +40,8 @@ public class NewRequestSignOutApproveTest {
     {
     	logInSteps.login(constante.USERPM, constante.PASSPM);
     	newVacationRequestSteps.clickNewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(12, "May", 2016);
-    	newVacationRequestSteps.selectEndDate(13, "May", 2016);
+    	newVacationRequestSteps.selectStartDate(Dates.startday, Dates.startmonth, Dates.startyear);
+    	newVacationRequestSteps.selectEndDate(Dates.endday, Dates.endmonth, Dates.endyear);
     	newVacationRequestSteps.selectHoliday();
     	newVacationRequestSteps.clickAddComment();
     	newVacationRequestSteps.typeComment("Concediu");

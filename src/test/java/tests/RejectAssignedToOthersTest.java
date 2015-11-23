@@ -5,16 +5,12 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 //import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
+import steps.AssignedToOthersSteps;
+import steps.LogInSteps;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-
-import steps.ApproveRequestSteps;
-import steps.AssignedToOthersSteps;
-import steps.EndUserSteps;
-//import com.steps.serenity.EndUserSteps;
-import steps.LogInSteps;
 
 import helper.constante;
 
@@ -34,15 +30,15 @@ public class RejectAssignedToOthersTest
     
     @Test
     public void approveRequestTest() {
-    	logInSteps.login(constante.USERDM, constante.PASSDM);
-    	assignedToOthersSteps.GoToInbox();
-    	assignedToOthersSteps.GotoAssignedToOthersTab();
-    	assignedToOthersSteps.checklist();
-    	assignedToOthersSteps.reject();
-    	assignedToOthersSteps.verifymessage();
+     logInSteps.login(constante.USERDM, constante.PASSDM);
+     assignedToOthersSteps.GoToInbox();
+     assignedToOthersSteps.GotoAssignedToOthersTab();
+     assignedToOthersSteps.checklist();
+     assignedToOthersSteps.reject();
+     assignedToOthersSteps.verifymessage();
     
     }
      
   
     
-}  
+}
