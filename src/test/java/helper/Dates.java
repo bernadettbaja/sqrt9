@@ -6,11 +6,11 @@ public class Dates
 
 	//Alexandra
 	
-	public final static int startday=24;
+	public final static int startday=26;
 	public final static String startmonth = "May";
 	public final static int startyear= 2016;
 	
-	public final static int endday=25;
+	public final static int endday=27;
 	public final static String endmonth = "May";
 	public final static int endyear= 2016;
 	
