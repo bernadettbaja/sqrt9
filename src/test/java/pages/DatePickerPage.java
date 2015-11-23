@@ -37,7 +37,7 @@ public class DatePickerPage extends PageObject {
 
 		//select month
 		for (WebElementFacade i : monthList)
-			if (i.getText().contentEquals(month)) {
+			if (i.getText().toLowerCase().contentEquals(month.toLowerCase())) {
 				i.click();
 				break;
 			}

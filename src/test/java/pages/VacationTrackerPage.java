@@ -15,7 +15,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 public class VacationTrackerPage extends PageObject 
 {
 	@FindBy(name = "trackerStartDate")
-	private WebElementFacade trackerStarDate;
+	private WebElementFacade trackerStartDate;
 
 	@FindBy(name = "trackerEndDate")
 	private WebElementFacade trackerEndDate;
@@ -69,71 +69,18 @@ public class VacationTrackerPage extends PageObject
 	
 	public void setStartDate(int day, String month, int year) throws InterruptedException 
 	{
-		trackerStarDate.click(); // It simply clicks on the StartDate calendar -
+		element(trackerStartDate).waitUntilVisible();
+		trackerStartDate.click(); // It simply clicks on the StartDate calendar -
 									// for the calendar to open
-
 		DatePicker.setDate(day, month, year);
-		
-//		// it clicks two times on title
-//		title.click();
-//		title.click();
-//
-//		// select year
-//		for (WebElementFacade i : yearList)
-//			if (i.getText().contentEquals(Integer.toString(year))) 
-//			{
-//				i.click();
-//				break;
-//			}
-//
-//		// select month
-//		for (WebElementFacade i : monthList)
-//			if (i.getText().equalsIgnoreCase(month)) 
-//			{
-//				i.click();
-//				break;
-//			}
-//
-//		// select day
-//		for (WebElementFacade i : dayList)
-//			if (i.getText().contentEquals(Integer.toString(day))) 
-//			{
-//				i.click();
-//				break;
-//			}
 	}
 
-	public void setEndDate(int day, String month, int year) throws InterruptedException {
+	public void setEndDate(int day, String month, int year) throws InterruptedException 
+	{
+		element(trackerEndDate).waitUntilVisible();
 		trackerEndDate.click(); // It simply clicks on the StartDate calendar -
 								// for the calendar to open
 		DatePicker.setDate(day, month, year);
-//		// it clicks two times on title
-//		title.click();
-//		title.click();
-//
-//		// select year
-//		for (WebElementFacade i : yearList)
-//			if (i.getText().contentEquals(Integer.toString(year))) 
-//			{
-//				i.click();
-//				break;
-//			}
-//
-//		// select month
-//		for (WebElementFacade i : monthList)
-//			if (i.getText().equalsIgnoreCase(month)) 
-//			{
-//				i.click();
-//				break;
-//			}
-//
-//		// select day
-//		for (WebElementFacade i : dayList)
-//			if (i.getText().contentEquals(Integer.toString(day))) 
-//			{
-//				i.click();
-//				break;
-//			}
 	}
 
 	public void setBuilding(String building) 
