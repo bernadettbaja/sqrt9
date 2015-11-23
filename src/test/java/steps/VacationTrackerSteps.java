@@ -4,14 +4,14 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.steps.ScenarioSteps;
 import pages.VacationOptionsPage;
-import pages.VacationTracker;
+import pages.VacationTrackerPage;
 
 public class VacationTrackerSteps extends ScenarioSteps
 {
 	@Steps
     public LogInSteps logInSteps;
     public VacationOptionsPage vacationOptionsPage;
-    public VacationTracker vacationTracker;
+    public VacationTrackerPage vacationTracker;
     
     
 	@Step

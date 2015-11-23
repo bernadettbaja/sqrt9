@@ -5,7 +5,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import Helper.constante;
+import helper.constante;
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
@@ -13,7 +13,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl(constante.BASEURL + "/vacation")
-public class VacationTracker extends PageObject {
+public class VacationTrackerPage extends PageObject {
 	@FindBy(name = "trackerStartDate")
 	private WebElementFacade trackerStarDate;
 

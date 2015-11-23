@@ -4,9 +4,9 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import Helper.Dates;
-import Helper.constante;
-import Helper.departments;
+import helper.Dates;
+import helper.constante;
+import helper.departments;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -14,7 +14,7 @@ import steps.LogInSteps;
 import steps.VacationTrackerSteps;
 
 @RunWith(SerenityRunner.class)
-public class TestsVacationTracker {
+public class VacationTrackerTest {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 

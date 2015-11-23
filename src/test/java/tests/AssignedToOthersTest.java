@@ -14,7 +14,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import Helper.constante;
+import helper.constante;
 
 @RunWith(SerenityRunner.class)
 public class AssignedToOthersTest 
