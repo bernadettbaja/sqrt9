@@ -42,12 +42,12 @@ public class NewVacationRequestPage extends PageObject {
 	private WebElementFacade saveButton;
 
 
-	public void click_startDate() {
+	public void clickStartDate() {
 		element(startDate).waitUntilVisible();
 		startDate.click();
 	}
 
-	public void click_endDate() {
+	public void clickEndDate() {
 		endDate.click();
 	}
 
