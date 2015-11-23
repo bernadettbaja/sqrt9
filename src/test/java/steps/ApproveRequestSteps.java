@@ -13,7 +13,7 @@ public class ApproveRequestSteps extends ScenarioSteps
 
 	@Step
 	public void GoToInbox() {
-		vacationOptionsPage.createPageNewVacationRequest();
+		vacationOptionsPage.createPageInboxVacManagement();
 	}
 
 	@Step
