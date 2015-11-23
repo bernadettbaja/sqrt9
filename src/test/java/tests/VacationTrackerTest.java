@@ -67,7 +67,7 @@ public class VacationTrackerTest {
 	}
 	
 	@Test
-	public void check_WebDep_BuildingMain_all_pages() throws InterruptedException
+	public void checkWebDepBuildingMainSearchAllPages() throws InterruptedException
 	{
 		logInSteps.login(constante.USERPM, constante.PASSPM);
 		vacationTrackerSteps.enterTrackVacationTracker();
@@ -91,6 +91,20 @@ public class VacationTrackerTest {
 		vacationTrackerSteps.insertDepartment(departments.DEPARTMENT_QA);
 		vacationTrackerSteps.applySelection();
 		vacationTrackerSteps.checkQaDepartmentBuildingDeltaNoEntry(departments.BUILDING_DELTA, departments.BUILDING_DELTA, constante.NOVACATIONMESS);
+		webdriver.close();
+	}
+	
+	@Test
+	public void checkChangeNumberOfRows() throws InterruptedException
+	{
+		logInSteps.login(constante.USERPM, constante.PASSPM);
+		vacationTrackerSteps.enterTrackVacationTracker();
+		vacationTrackerSteps.insertStartDate(Dates.STARTDAY_PM_WEB_PAGE, Dates.STARTMONTH_PM_WEB_PAGE, Dates.STARTYEAR_PM_WEB_PAGE);
+		vacationTrackerSteps.insertEndDate(Dates.ENDDAY_PM_WEB_PAGE, Dates.ENDMONTH_PM_WEB_PAGE, Dates.ENDYEAR_PM_WEB_PAGE);
+		vacationTrackerSteps.insertBuilding(departments.BUILDING_MAIN);
+		vacationTrackerSteps.insertDepartment(departments.DEPARTMENT_WEB);
+		vacationTrackerSteps.applySelection();
+		vacationTrackerSteps.checkNumberOfRowsModification(departments.BUILDING_MAIN, departments.DEPARTMENT_WEB);
 		webdriver.close();
 	}
 }

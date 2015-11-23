@@ -238,4 +238,26 @@ public class VacationTrackerPage extends PageObject {
 		Assert.assertTrue(noVacation.getText().equals(noVacationMess));
 		
 	}
+	
+	public void checkChangeInNumberOfRows(String building, String department)
+	{
+		waitABit(500);
+		List<WebElement> showBuildingList = getDriver().findElements(By.cssSelector("table tbody tr td.col-building"));
+		for (WebElement i : showBuildingList)
+		{
+			Assert.assertTrue(i.getText().contains(building));			 
+		}
+				
+		List<WebElement> showDepartmentList = getDriver().findElements(By.cssSelector("table tbody tr td.col-department"));
+		for (WebElement j : showDepartmentList) 
+		{		
+			Assert.assertTrue(j.getText().contains(department));			  
+		}
+		
+		if (pressNextButton.isVisible())
+		{
+			pressNextButton.click();
+			checkDepartBuildingInAllList(building, department);		
+		}
+	}
 }
