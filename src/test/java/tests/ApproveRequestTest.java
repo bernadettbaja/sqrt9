@@ -6,7 +6,6 @@ import net.thucydides.core.annotations.Managed;
 //import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
 import steps.ApproveRequestSteps;
-import steps.EndUserSteps;
 import steps.LogInSteps;
 
 import org.junit.Test;

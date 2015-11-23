@@ -1,12 +1,9 @@
 package tests;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
-//import net.thucydides.core.annotations.Issue;
 import net.thucydides.core.annotations.Managed;
-//import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
 import steps.ApproveRequestSteps;
-import steps.EndUserSteps;
 import steps.LogInSteps;
 import steps.RejectRequestSteps;
 
