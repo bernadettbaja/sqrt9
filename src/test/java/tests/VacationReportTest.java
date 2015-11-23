@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import helper.Dates;
 import helper.constante;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -31,8 +32,8 @@ public class VacationReportTest {
 	public void approveRequestTest() {
 		logInSteps.login(constante.USERDM, constante.PASSDM);
 		vacationsReportSteps.clickVacationReport();
-		vacationsReportSteps.selectMonth("May");
-		vacationsReportSteps.selectYear("2014");
+		vacationsReportSteps.selectMonth(Dates.pickmonth);
+		vacationsReportSteps.selectYear(Dates.pickyear);
 		vacationsReportSteps.selectPending();
 		vacationsReportSteps.selectExport();
 		
