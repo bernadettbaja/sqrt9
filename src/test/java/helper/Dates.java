@@ -6,13 +6,16 @@ public class Dates
 
 	//Alexandra
 	
-	public final static int startday=23;
+	public final static int startday=24;
 	public final static String startmonth = "May";
 	public final static int startyear= 2016;
 	
-	public final static int endday=24;
+	public final static int endday=25;
 	public final static String endmonth = "May";
 	public final static int endyear= 2016;
+	
+	public final static String pickmonth="May";
+	public final static String pickyear="2014";
 	
 	
 	
@@ -61,6 +64,13 @@ public class Dates
 	//Bernadette
 	
 	
+	public final static int pickstartday=6;
+	public final static String pickstartmonth = "Mar";
+	public final static int pickstartyear= 2018;
+	
+	public final static int pickendday=7;
+	public final static String pickendmonth = "Mar";
+	public final static int pickendyear= 2018;
 	
 	
 	

@@ -30,15 +30,15 @@ public class RejectAssignedToOthersTest
     
     @Test
     public void approveRequestTest() {
-    	logInSteps.login(constante.USERDM, constante.PASSDM);
-    	assignedToOthersSteps.GoToInbox();
-    	assignedToOthersSteps.GotoAssignedToOthersTab();
-    	assignedToOthersSteps.checklist();
-    	assignedToOthersSteps.reject();
-    	assignedToOthersSteps.verifymessage();
+     logInSteps.login(constante.USERDM, constante.PASSDM);
+     assignedToOthersSteps.GoToInbox();
+     assignedToOthersSteps.GotoAssignedToOthersTab();
+     assignedToOthersSteps.checklist();
+     assignedToOthersSteps.reject();
+     assignedToOthersSteps.verifymessage();
     
     }
      
   
     
-}  
+}

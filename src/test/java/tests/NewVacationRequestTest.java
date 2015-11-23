@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import helper.Dates;
 import helper.constante;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -28,8 +29,8 @@ public class NewVacationRequestTest {
     {
     	logInSteps.login(constante.USERDEV, constante.PASSDEV);
     	newVacationRequestSteps.clickNewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(17, "Nov", 2015);
-    	newVacationRequestSteps.selectEndDate(18, "Nov", 2015);
+    	newVacationRequestSteps.selectStartDate(Dates.pickstartday, Dates.pickstartmonth, Dates.pickstartyear);
+    	newVacationRequestSteps.selectEndDate(Dates.pickendday, Dates.pickendmonth, Dates.pickendyear);
 //    	newVacationRequestSteps.selectHoliday();
 //    	newVacationRequestSteps.selectVacationWithoutPayment();
 //    	newVacationRequestSteps.selectSickleave();
