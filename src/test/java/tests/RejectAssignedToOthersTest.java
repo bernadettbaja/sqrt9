@@ -1,22 +1,18 @@
-package com.features.search;
+package tests;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 //import net.thucydides.core.annotations.Issue;
 import net.thucydides.core.annotations.Managed;
 //import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
+import steps.AssignedToOthersSteps;
+import steps.LogInSteps;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.steps.serenity.ApproveRequestSteps;
-import com.steps.serenity.AssignedToOthersSteps;
-import com.steps.serenity.EndUserSteps;
-//import com.steps.serenity.EndUserSteps;
-import com.steps.serenity.LogInSteps;
-
-import Helper.constante;
+import helper.constante;
 
 @RunWith(SerenityRunner.class)
 public class RejectAssignedToOthersTest 
