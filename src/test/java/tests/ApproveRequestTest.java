@@ -28,7 +28,8 @@ public class ApproveRequestTest
     public ApproveRequestSteps approveRequestSteps;
   
     @Test
-    public void approveRequestTest() {
+    public void approveRequestTest() 
+    {
     	logInSteps.login(Constante.USERDM, Constante.PASSDM);
     	approveRequestSteps.GoToInbox();
     	approveRequestSteps.checklist();
